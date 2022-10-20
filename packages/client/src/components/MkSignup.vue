@@ -65,7 +65,7 @@
 
 <script lang="ts" setup>
 import { } from 'vue';
-import getPasswordStrength from 'syuilo-password-strength';
+import getPasswordStrength from 'evgen-password-strength';
 import { toUnicode } from 'punycode/';
 import MkButton from './MkButton.vue';
 import MkInput from './form/input.vue';

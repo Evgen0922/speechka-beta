@@ -1,4 +1,4 @@
-import { utils, values } from '@syuilo/aiscript';
+import { utils, values } from '@evgen/aiscript';
 import * as os from '@/os';
 import { $i } from '@/account';
 

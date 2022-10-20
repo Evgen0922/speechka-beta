@@ -14,8 +14,8 @@
 
 <script lang="ts" setup>
 import { defineAsyncComponent, nextTick, ref } from 'vue';
-import { AiScript, parse } from '@syuilo/aiscript';
-import { serialize } from '@syuilo/aiscript/built/serializer';
+import { AiScript, parse } from '@evgen/aiscript';
+import { serialize } from '@evgen/aiscript/built/serializer';
 import { v4 as uuid } from 'uuid';
 import FormTextarea from '@/components/form/textarea.vue';
 import FormButton from '@/components/MkButton.vue';
