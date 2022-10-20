@@ -169,7 +169,7 @@
 			font-family: BIZ UDGothic, Roboto, HelveticaNeue, Arial, sans-serif;
 		}
 
-		#misskey_app,
+		#speechka_app,
 		#splash {
 			display: none !important;
 		}

@@ -27,7 +27,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		clipId: { type: 'string', format: 'misskey:id' },
+		clipId: { type: 'string', format: 'speechka:id' },
 		name: { type: 'string', minLength: 1, maxLength: 100 },
 		isPublic: { type: 'boolean' },
 		description: { type: 'string', nullable: true, minLength: 1, maxLength: 2048 },

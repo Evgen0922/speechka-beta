@@ -25,11 +25,11 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import { defaultStore } from '@/store';
 
 const props = defineProps<{
-	video: misskey.entities.DriveFile;
+	video: speechka.entities.DriveFile;
 }>();
 
 const hide = ref((defaultStore.state.nsfw === 'force') ? true : props.video.isSensitive && (defaultStore.state.nsfw !== 'ignore'));

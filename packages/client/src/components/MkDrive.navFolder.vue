@@ -14,20 +14,20 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import * as os from '@/os';
 import { i18n } from '@/i18n';
 
 const props = defineProps<{
-	folder?: Misskey.entities.DriveFolder;
-	parentFolder: Misskey.entities.DriveFolder | null;
+	folder?: Speechka.entities.DriveFolder;
+	parentFolder: Speechka.entities.DriveFolder | null;
 }>();
 
 const emit = defineEmits<{
-	(ev: 'move', v?: Misskey.entities.DriveFolder): void;
-	(ev: 'upload', file: File, folder?: Misskey.entities.DriveFolder | null): void;
-	(ev: 'removeFile', v: Misskey.entities.DriveFile['id']): void;
-	(ev: 'removeFolder', v: Misskey.entities.DriveFolder['id']): void;
+	(ev: 'move', v?: Speechka.entities.DriveFolder): void;
+	(ev: 'upload', file: File, folder?: Speechka.entities.DriveFolder | null): void;
+	(ev: 'removeFile', v: Speechka.entities.DriveFile['id']): void;
+	(ev: 'removeFolder', v: Speechka.entities.DriveFolder['id']): void;
 }>();
 
 const hover = ref(false);

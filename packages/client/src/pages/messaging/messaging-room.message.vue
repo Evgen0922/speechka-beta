@@ -38,14 +38,14 @@
 <script lang="ts" setup>
 import { } from 'vue';
 import * as mfm from 'mfm-js';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import { extractUrlFromMfm } from '@/scripts/extract-url-from-mfm';
 import MkUrlPreview from '@/components/MkUrlPreview.vue';
 import * as os from '@/os';
 import { $i } from '@/account';
 
 const props = defineProps<{
-	message: Misskey.entities.MessagingMessage;
+	message: Speechka.entities.MessagingMessage;
 	isGroup?: boolean;
 }>();
 

@@ -21,7 +21,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		id: { type: 'string', format: 'misskey:id' },
+		id: { type: 'string', format: 'speechka:id' },
 		name: { type: 'string' },
 		category: {
 			type: 'string',

@@ -9,7 +9,7 @@
 	"dependencies": {
 		"esbuild": "^0.14.13",
 		"idb-keyval": "^6.0.3",
-		"misskey-js": "0.0.14"
+		"speechka-js": "0.0.14"
 	},
 	"devDependencies": {
 		"eslint": "^8.2.0"

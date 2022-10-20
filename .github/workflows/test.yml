@@ -21,7 +21,7 @@ jobs:
         ports:
           - 54312:5432
         env:
-          POSTGRES_DB: test-misskey
+          POSTGRES_DB: test-speechka
           POSTGRES_HOST_AUTH_METHOD: trust
       redis:
         image: redis:6
@@ -45,7 +45,7 @@ jobs:
     - name: Check yarn.lock
       run: git diff --exit-code yarn.lock
     - name: Copy Configure
-      run: cp .github/misskey/test.yml .config
+      run: cp .github/speechka/test.yml .config
     - name: Build
       run: yarn build
     - name: Test
@@ -66,7 +66,7 @@ jobs:
         ports:
           - 54312:5432
         env:
-          POSTGRES_DB: test-misskey
+          POSTGRES_DB: test-speechka
           POSTGRES_HOST_AUTH_METHOD: trust
       redis:
         image: redis:6
@@ -96,7 +96,7 @@ jobs:
     - name: Check yarn.lock
       run: git diff --exit-code yarn.lock
     - name: Copy Configure
-      run: cp .github/misskey/test.yml .config
+      run: cp .github/speechka/test.yml .config
     - name: Build
       run: yarn build
     # https://github.com/cypress-io/cypress/issues/4351#issuecomment-559489091

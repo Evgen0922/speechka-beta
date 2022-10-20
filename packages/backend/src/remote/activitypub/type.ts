@@ -110,9 +110,9 @@ export interface IPost extends IObject {
 		content: string;
 		mediaType: string;
 	};
-	_misskey_quote?: string;
+	_speechka_quote?: string;
 	quoteUrl?: string;
-	_misskey_talk: boolean;
+	_speechka_talk: boolean;
 }
 
 export interface IQuestion extends IObject {
@@ -121,7 +121,7 @@ export interface IQuestion extends IObject {
 		content: string;
 		mediaType: string;
 	};
-	_misskey_quote?: string;
+	_speechka_quote?: string;
 	quoteUrl?: string;
 	oneOf?: IQuestionChoice[];
 	anyOf?: IQuestionChoice[];
@@ -135,7 +135,7 @@ export const isQuestion = (object: IObject): object is IQuestion =>
 interface IQuestionChoice {
 	name?: string;
 	replies?: ICollection;
-	_misskey_votes?: number;
+	_speechka_votes?: number;
 }
 export interface ITombstone extends IObject {
 	type: 'Tombstone';
@@ -264,7 +264,7 @@ export interface IRemove extends IActivity {
 
 export interface ILike extends IActivity {
 	type: 'Like' | 'EmojiReaction' | 'EmojiReact';
-	_misskey_reaction?: string;
+	_speechka_reaction?: string;
 }
 
 export interface IAnnounce extends IActivity {

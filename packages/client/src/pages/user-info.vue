@@ -153,7 +153,7 @@
 
 <script lang="ts" setup>
 import { computed, watch } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import MkChart from '@/components/MkChart.vue';
 import MkObjectView from '@/components/MkObjectView.vue';
 import FormTextarea from '@/components/form/textarea.vue';
@@ -185,7 +185,7 @@ const props = defineProps<{
 
 let tab = $ref('overview');
 let chartSrc = $ref('per-user-notes');
-let user = $ref<null | misskey.entities.UserDetailed>();
+let user = $ref<null | speechka.entities.UserDetailed>();
 let init = $ref<ReturnType<typeof createFetcher>>();
 let info = $ref();
 let ips = $ref(null);

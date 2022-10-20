@@ -1,14 +1,12 @@
 import { computed, reactive } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import { api } from './os';
 
-// TODO: 他のタブと永続化されたstateを同期
 
 const instanceData = localStorage.getItem('instance');
 
-// TODO: instanceをリアクティブにするかは再考の余地あり
 
-export const instance: Misskey.entities.InstanceMetadata = reactive(instanceData ? JSON.parse(instanceData) : {
+export const instance: Speechka.entities.InstanceMetadata = reactive(instanceData ? JSON.parse(instanceData) : {
 	// TODO: set default values
 });
 
@@ -44,7 +42,6 @@ export const emojiTags = computed(() => {
 	return Array.from(tags);
 });
 
-// このファイルに書きたくないけどここに書かないと何故かVeturが認識しない
 declare module '@vue/runtime-core' {
 	interface ComponentCustomProperties {
 		$instance: typeof instance;

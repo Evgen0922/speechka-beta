@@ -1,11 +1,11 @@
-url: 'http://misskey.local'
+url: 'http://speechka.local'
 
 port: 61812
 
 db:
   host: localhost
   port: 54312
-  db: test-misskey
+  db: test-speechka
   user: postgres
   pass: ''
 redis:

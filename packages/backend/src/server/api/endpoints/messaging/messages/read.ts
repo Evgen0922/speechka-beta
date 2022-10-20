@@ -22,7 +22,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		messageId: { type: 'string', format: 'misskey:id' },
+		messageId: { type: 'string', format: 'speechka:id' },
 	},
 	required: ['messageId'],
 } as const;

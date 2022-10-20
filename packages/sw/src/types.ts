@@ -1,4 +1,4 @@
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 
 export type swMessageOrderType = 'post' | 'push';
 
@@ -12,8 +12,8 @@ export type SwMessage = {
 
 
 type pushNotificationDataSourceMap = {
-	notification: Misskey.entities.Notification;
-	unreadMessagingMessage: Misskey.entities.MessagingMessage;
+	notification: Speechka.entities.Notification;
+	unreadMessagingMessage: Speechka.entities.MessagingMessage;
 	readNotifications: { notificationIds: string[] };
 	readAllNotifications: undefined;
 	readAllMessagingMessages: undefined;

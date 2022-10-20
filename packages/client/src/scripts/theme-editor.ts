@@ -52,7 +52,7 @@ export const toThemeString = (value: Color | Func | RefProp | RefConst | Css) =>
 	}
 };
 
-export const convertToMisskeyTheme = (vm: ThemeViewModel, name: string, desc: string, author: string, base: 'dark' | 'light'): Theme => {
+export const convertToSpeechkaTheme = (vm: ThemeViewModel, name: string, desc: string, author: string, base: 'dark' | 'light'): Theme => {
 	const props = { } as { [key: string]: string };
 	for (const [ key, value ] of vm) {
 		if (value === null) continue;

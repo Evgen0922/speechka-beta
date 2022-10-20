@@ -8,7 +8,7 @@ import { ApiError } from './error.js';
 
 export type Response = Record<string, any> | void;
 
-// TODO: paramsの型をT['params']のスキーマ定義から推論する
+
 type executor<T extends IEndpointMeta, Ps extends Schema> =
 	(params: SchemaType<Ps>, user: T['requireCredential'] extends true ? CacheableLocalUser : CacheableLocalUser | null, token: AccessToken | null, file?: any, cleanup?: () => any, ip?: string | null, headers?: Record<string, string> | null) =>
 		Promise<T['res'] extends undefined ? Response : SchemaType<NonNullable<T['res']>>>;
@@ -17,7 +17,7 @@ const ajv = new Ajv({
 	useDefaults: true,
 });
 
-ajv.addFormat('misskey:id', /^[a-zA-Z0-9]+$/);
+ajv.addFormat('speechka:id', /^[a-zA-Z0-9]+$/);
 
 export default function <T extends IEndpointMeta, Ps extends Schema>(meta: T, paramDef: Ps, cb: executor<T, Ps>)
 		: (params: any, user: T['requireCredential'] extends true ? CacheableLocalUser : CacheableLocalUser | null, token: AccessToken | null, file?: any, ip?: string | null, headers?: Record<string, string> | null) => Promise<any> {

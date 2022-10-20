@@ -27,11 +27,11 @@
 
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import { ColdDeviceStorage } from '@/store';
 
 const props = withDefaults(defineProps<{
-	media: misskey.entities.DriveFile;
+	media: speechka.entities.DriveFile;
 }>(), {
 });
 

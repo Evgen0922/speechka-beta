@@ -9,7 +9,7 @@
 			</h1>
 			<template v-if="full">
 				<div v-if="meta" class="about">
-					<div class="desc" v-html="meta.description || $ts.introMisskey"></div>
+					<div class="desc" v-html="meta.description || $ts.introSpeechka"></div>
 				</div>
 				<div class="action">
 					<button class="_buttonPrimary" @click="signup()">{{ $ts.signup }}</button>

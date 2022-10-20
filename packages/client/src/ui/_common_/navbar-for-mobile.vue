@@ -86,7 +86,7 @@ function openInstanceMenu(ev: MouseEvent) {
 	// },
     {
 		type: 'link',
-		text: i18n.ts.aboutMisskey,
+		text: i18n.ts.aboutSpeechka,
 		to: '/about-speechka',
 	}], ev.currentTarget ?? ev.target, {
 		align: 'left',

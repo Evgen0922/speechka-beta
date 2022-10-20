@@ -39,10 +39,10 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		channelId: { type: 'string', format: 'misskey:id' },
+		channelId: { type: 'string', format: 'speechka:id' },
 		name: { type: 'string', minLength: 1, maxLength: 128 },
 		description: { type: 'string', nullable: true, minLength: 1, maxLength: 2048 },
-		bannerId: { type: 'string', format: 'misskey:id', nullable: true },
+		bannerId: { type: 'string', format: 'speechka:id', nullable: true },
 	},
 	required: ['channelId'],
 } as const;

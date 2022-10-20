@@ -21,7 +21,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		clipId: { type: 'string', format: 'misskey:id' },
+		clipId: { type: 'string', format: 'speechka:id' },
 	},
 	required: ['clipId'],
 } as const;

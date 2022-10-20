@@ -27,7 +27,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		postId: { type: 'string', format: 'misskey:id' },
+		postId: { type: 'string', format: 'speechka:id' },
 	},
 	required: ['postId'],
 } as const;

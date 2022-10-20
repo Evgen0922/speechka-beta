@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import XDetails from '@/components/MkUsersTooltip.vue';
 import { pleaseLogin } from '@/scripts/please-login';
 import * as os from '@/os';
@@ -24,7 +24,7 @@ import { useTooltip } from '@/scripts/use-tooltip';
 import { i18n } from '@/i18n';
 
 const props = defineProps<{
-	note: misskey.entities.Note;
+	note: speechka.entities.Note;
 	count: number;
 }>();
 

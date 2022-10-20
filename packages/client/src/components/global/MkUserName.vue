@@ -4,10 +4,10 @@
 
 <script lang="ts" setup>
 import { } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 
 const props = withDefaults(defineProps<{
-	user: misskey.entities.User;
+	user: speechka.entities.User;
 	nowrap?: boolean;
 }>(), {
 	nowrap: true,

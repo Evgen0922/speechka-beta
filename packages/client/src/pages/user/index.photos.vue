@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import { getStaticImageUrl } from '@/scripts/get-static-image-url';
 import { notePage } from '@/filters/note';
 import * as os from '@/os';
@@ -29,16 +29,16 @@ import ImgWithBlurhash from '@/components/MkImgWithBlurhash.vue';
 import { defaultStore } from '@/store';
 
 const props = defineProps<{
-	user: misskey.entities.UserDetailed;
+	user: speechka.entities.UserDetailed;
 }>();
 
 let fetching = $ref(true);
 let images = $ref<{
-	note: misskey.entities.Note;
-	file: misskey.entities.DriveFile;
+	note: speechka.entities.Note;
+	file: speechka.entities.DriveFile;
 }[]>([]);
 
-function thumbnail(image: misskey.entities.DriveFile): string {
+function thumbnail(image: speechka.entities.DriveFile): string {
 	return defaultStore.state.disableShowingAnimatedImages
 		? getStaticImageUrl(image.thumbnailUrl)
 		: image.thumbnailUrl;

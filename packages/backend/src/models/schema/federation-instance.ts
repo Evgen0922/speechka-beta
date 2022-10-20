@@ -16,7 +16,7 @@ export const packedFederationInstanceSchema = {
 		host: {
 			type: 'string',
 			optional: false, nullable: false,
-			example: 'misskey.example.com',
+			example: 'speechka.example.com',
 		},
 		usersCount: {
 			type: 'number',
@@ -59,7 +59,7 @@ export const packedFederationInstanceSchema = {
 		softwareName: {
 			type: 'string',
 			optional: false, nullable: true,
-			example: 'misskey',
+			example: 'speechka',
 		},
 		softwareVersion: {
 			type: 'string',

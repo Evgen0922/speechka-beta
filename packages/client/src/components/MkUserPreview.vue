@@ -35,8 +35,8 @@
 
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import * as Acct from 'misskey-js/built/acct';
-import * as misskey from 'misskey-js';
+import * as Acct from 'speechka-js/built/acct';
+import * as speechka from 'speechka-js';
 import MkFollowButton from '@/components/MkFollowButton.vue';
 import { userPage } from '@/filters/user';
 import * as os from '@/os';
@@ -54,7 +54,7 @@ const emit = defineEmits<{
 }>();
 
 const zIndex = os.claimZIndex('middle');
-let user = $ref<misskey.entities.UserDetailed | null>(null);
+let user = $ref<speechka.entities.UserDetailed | null>(null);
 let top = $ref(0);
 let left = $ref(0);
 

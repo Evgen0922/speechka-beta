@@ -37,7 +37,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		emojiId: { type: 'string', format: 'misskey:id' },
+		emojiId: { type: 'string', format: 'speechka:id' },
 	},
 	required: ['emojiId'],
 } as const;

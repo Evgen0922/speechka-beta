@@ -40,9 +40,9 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		folderId: { type: 'string', format: 'misskey:id' },
+		folderId: { type: 'string', format: 'speechka:id' },
 		name: { type: 'string', maxLength: 200 },
-		parentId: { type: 'string', format: 'misskey:id', nullable: true },
+		parentId: { type: 'string', format: 'speechka:id', nullable: true },
 	},
 	required: ['folderId'],
 } as const;

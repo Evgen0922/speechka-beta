@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import { computed, defineAsyncComponent, ref, toRef, watch } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import MarqueeText from '@/components/MkMarquee.vue';
 import * as os from '@/os';
 import { useInterval } from '@/scripts/use-interval';
@@ -37,7 +37,7 @@ const props = defineProps<{
 	refreshIntervalSec?: number;
 }>();
 
-const instances = ref<misskey.entities.Instance[]>([]);
+const instances = ref<speechka.entities.Instance[]>([]);
 const fetching = ref(true);
 let key = $ref(0);
 

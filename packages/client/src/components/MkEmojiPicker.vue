@@ -79,7 +79,7 @@
 
 <script lang="ts" setup>
 import { ref, computed, watch, onMounted } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import XSection from '@/components/MkEmojiPicker.section.vue';
 import { emojilist, UnicodeEmojiDef, unicodeEmojiCategories as categories } from '@/scripts/emojilist';
 import { getStaticImageUrl } from '@/scripts/get-static-image-url';
@@ -122,7 +122,7 @@ const height = computed(() => props.asReactionPicker ? reactionPickerHeight.valu
 const customEmojiCategories = emojiCategories;
 const customEmojis = instance.emojis;
 const q = ref<string | null>(null);
-const searchResultCustom = ref<Misskey.entities.CustomEmoji[]>([]);
+const searchResultCustom = ref<Speechka.entities.CustomEmoji[]>([]);
 const searchResultUnicode = ref<UnicodeEmojiDef[]>([]);
 const tab = ref<'index' | 'custom' | 'unicode' | 'tags'>('index');
 
@@ -140,15 +140,14 @@ watch(q, () => {
 	const searchCustom = () => {
 		const max = 8;
 		const emojis = customEmojis;
-		const matches = new Set<Misskey.entities.CustomEmoji>();
+		const matches = new Set<Speechka.entities.CustomEmoji>();
 
 		const exactMatch = emojis.find(emoji => emoji.name === newQ);
 		if (exactMatch) matches.add(exactMatch);
 
-		if (newQ.includes(' ')) { // AND検索
+		if (newQ.includes(' ')) { 
 			const keywords = newQ.split(' ');
 
-			// 名前にキーワードが含まれている
 			for (const emoji of emojis) {
 				if (keywords.every(keyword => emoji.name.includes(keyword))) {
 					matches.add(emoji);
@@ -157,7 +156,6 @@ watch(q, () => {
 			}
 			if (matches.size >= max) return matches;
 
-			// 名前またはエイリアスにキーワードが含まれている
 			for (const emoji of emojis) {
 				if (keywords.every(keyword => emoji.name.includes(keyword) || emoji.aliases.some(alias => alias.includes(keyword)))) {
 					matches.add(emoji);
@@ -208,10 +206,9 @@ watch(q, () => {
 		const exactMatch = emojis.find(emoji => emoji.name === newQ);
 		if (exactMatch) matches.add(exactMatch);
 
-		if (newQ.includes(' ')) { // AND検索
+		if (newQ.includes(' ')) { 
 			const keywords = newQ.split(' ');
 
-			// 名前にキーワードが含まれている
 			for (const emoji of emojis) {
 				if (keywords.every(keyword => emoji.name.includes(keyword))) {
 					matches.add(emoji);
@@ -220,7 +217,6 @@ watch(q, () => {
 			}
 			if (matches.size >= max) return matches;
 
-			// 名前またはエイリアスにキーワードが含まれている
 			for (const emoji of emojis) {
 				if (keywords.every(keyword => emoji.name.includes(keyword) || emoji.keywords.some(alias => alias.includes(keyword)))) {
 					matches.add(emoji);
@@ -280,7 +276,7 @@ function reset() {
 	q.value = '';
 }
 
-function getKey(emoji: string | Misskey.entities.CustomEmoji | UnicodeEmojiDef): string {
+function getKey(emoji: string | Speechka.entities.CustomEmoji | UnicodeEmojiDef): string {
 	return typeof emoji === 'string' ? emoji : (emoji.char || `:${emoji.name}:`);
 }
 
@@ -296,7 +292,6 @@ function chosen(emoji: any, ev?: MouseEvent) {
 	const key = getKey(emoji);
 	emit('chosen', key);
 
-	// 最近使った絵文字更新
 	if (!pinned.value.includes(key)) {
 		let recents = defaultStore.state.recentlyUsedEmojis;
 		recents = recents.filter((emoji: any) => emoji !== key);

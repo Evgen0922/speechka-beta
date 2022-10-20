@@ -25,7 +25,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		invitationId: { type: 'string', format: 'misskey:id' },
+		invitationId: { type: 'string', format: 'speechka:id' },
 	},
 	required: ['invitationId'],
 } as const;

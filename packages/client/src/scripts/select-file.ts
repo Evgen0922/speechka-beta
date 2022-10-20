@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { DriveFile } from 'misskey-js/built/entities';
+import { DriveFile } from 'speechka-js/built/entities';
 import * as os from '@/os';
 import { stream } from '@/stream';
 import { i18n } from '@/i18n';
@@ -24,11 +24,11 @@ function select(src: any, label: string | null, multiple: boolean): Promise<Driv
 				});
 
 				
-				(window as any).__misskey_input_ref__ = null;
+				(window as any).__speechka_input_ref__ = null;
 			};
 
 			
-			(window as any).__misskey_input_ref__ = input;
+			(window as any).__speechka_input_ref__ = input;
 
 			input.click();
 		};

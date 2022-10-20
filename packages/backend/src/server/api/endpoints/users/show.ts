@@ -51,14 +51,14 @@ export const paramDef = {
 	anyOf: [
 		{
 			properties: {
-				userId: { type: 'string', format: 'misskey:id' },
+				userId: { type: 'string', format: 'speechka:id' },
 			},
 			required: ['userId'],
 		},
 		{
 			properties: {
 				userIds: { type: 'array', uniqueItems: true, items: {
-					type: 'string', format: 'misskey:id',
+					type: 'string', format: 'speechka:id',
 				} },
 			},
 			required: ['userIds'],

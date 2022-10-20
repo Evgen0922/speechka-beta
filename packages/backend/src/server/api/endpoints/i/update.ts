@@ -75,8 +75,8 @@ export const paramDef = {
 		location: { ...Users.locationSchema, nullable: true },
 		birthday: { ...Users.birthdaySchema, nullable: true },
 		lang: { type: 'string', enum: [null, ...Object.keys(langmap)], nullable: true },
-		avatarId: { type: 'string', format: 'misskey:id', nullable: true },
-		bannerId: { type: 'string', format: 'misskey:id', nullable: true },
+		avatarId: { type: 'string', format: 'speechka:id', nullable: true },
+		bannerId: { type: 'string', format: 'speechka:id', nullable: true },
 		fields: {
 			type: 'array',
 			minItems: 0,
@@ -106,7 +106,7 @@ export const paramDef = {
 		autoSensitive: { type: 'boolean' },
 		ffVisibility: { type: 'string', enum: ['public', 'followers', 'private'] },
 		pinnedPageId: { type: 'array', items: {
-			type: 'string', format: 'misskey:id',
+			type: 'string', format: 'speechka:id',
 		} },
 		mutedWords: { type: 'array' },
 		mutedInstances: { type: 'array', items: {

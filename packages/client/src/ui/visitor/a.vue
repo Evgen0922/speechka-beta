@@ -5,7 +5,7 @@
 			<h1 v-if="meta"><img v-if="meta.logoImageUrl" class="logo" :src="meta.logoImageUrl"><span v-else class="text">{{ instanceName }}</span></h1>
 			<div v-if="meta" class="about">
 				<!-- eslint-disable-next-line vue/no-v-html -->
-				<div class="desc" v-html="meta.description || $ts.introMisskey"></div>
+				<div class="desc" v-html="meta.description || $ts.introSpeechka"></div>
 			</div>
 			<div class="action">
 				<button class="_button primary" @click="signup()">{{ $ts.signup }}</button>

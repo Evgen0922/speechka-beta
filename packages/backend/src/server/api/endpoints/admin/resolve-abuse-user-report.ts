@@ -15,7 +15,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		reportId: { type: 'string', format: 'misskey:id' },
+		reportId: { type: 'string', format: 'speechka:id' },
 		forward: { type: 'boolean', default: false },
 	},
 	required: ['reportId'],

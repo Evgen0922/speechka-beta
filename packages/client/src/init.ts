@@ -40,7 +40,7 @@ import { getUrlWithoutLoginId } from '@/scripts/login-id';
 import { getAccountFromId } from '@/scripts/get-account-from-id';
 
 (async () => {
-	console.info(`Misskey v${version}`);
+	console.info(`Speechka v${version}`);
 
 	if (_DEV_) {
 		console.warn('Development mode!!!');
@@ -111,7 +111,7 @@ import { getAccountFromId } from '@/scripts/get-account-from-id';
 			}
 		}
 
-		history.replaceState({ misskey: 'loginId' }, '', target);
+		history.replaceState({ speechka: 'loginId' }, '', target);
 	}
 
 	if ($i && $i.token) {
@@ -186,9 +186,9 @@ import { getAccountFromId } from '@/scripts/get-account-from-id';
 	});
 
 	const rootEl = (() => {
-		const MISSKEY_MOUNT_DIV_ID = 'misskey_app';
+		const SPEECHKA_MOUNT_DIV_ID = 'speechka_app';
 
-		const currentEl = document.getElementById(MISSKEY_MOUNT_DIV_ID);
+		const currentEl = document.getElementById(SPEECHKA_MOUNT_DIV_ID);
 
 		if (currentEl) {
 			console.warn('multiple import detected');
@@ -196,7 +196,7 @@ import { getAccountFromId } from '@/scripts/get-account-from-id';
 		}
 
 		const rootEl = document.createElement('div');
-		rootEl.id = MISSKEY_MOUNT_DIV_ID;
+		rootEl.id = SPEECHKA_MOUNT_DIV_ID;
 		document.body.appendChild(rootEl);
 		return rootEl;
 	})();

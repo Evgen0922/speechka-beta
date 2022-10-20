@@ -21,7 +21,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		webhookId: { type: 'string', format: 'misskey:id' },
+		webhookId: { type: 'string', format: 'speechka:id' },
 	},
 	required: ['webhookId'],
 } as const;

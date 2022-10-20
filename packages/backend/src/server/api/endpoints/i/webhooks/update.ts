@@ -24,7 +24,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		webhookId: { type: 'string', format: 'misskey:id' },
+		webhookId: { type: 'string', format: 'speechka:id' },
 		name: { type: 'string', minLength: 1, maxLength: 100 },
 		url: { type: 'string', minLength: 1, maxLength: 1024 },
 		secret: { type: 'string', minLength: 1, maxLength: 1024 },

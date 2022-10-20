@@ -127,7 +127,7 @@ export default async function renderNote(note: Note, dive = true, isTalk = false
 	} : {};
 
 	const asTalk = isTalk ? {
-		_misskey_talk: true,
+		_speechka_talk: true,
 	} : {};
 
 	return {
@@ -136,12 +136,12 @@ export default async function renderNote(note: Note, dive = true, isTalk = false
 		attributedTo,
 		summary,
 		content,
-		_misskey_content: text,
+		_speechka_content: text,
 		source: {
 			content: text,
-			mediaType: "text/x.misskeymarkdown",
+			mediaType: "text/x.speechkamarkdown",
 		},
-		_misskey_quote: quote,
+		_speechka_quote: quote,
 		quoteUrl: quote,
 		published: note.createdAt.toISOString(),
 		to,

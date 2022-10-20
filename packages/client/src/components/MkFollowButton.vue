@@ -29,13 +29,13 @@
 
 <script lang="ts" setup>
 import { onBeforeUnmount, onMounted } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import * as os from '@/os';
 import { stream } from '@/stream';
 import { i18n } from '@/i18n';
 
 const props = withDefaults(defineProps<{
-	user: Misskey.entities.UserDetailed,
+	user: Speechka.entities.UserDetailed,
 	full?: boolean,
 	large?: boolean,
 }>(), {
@@ -55,7 +55,7 @@ if (props.user.isFollowing == null) {
 	.then(onFollowChange);
 }
 
-function onFollowChange(user: Misskey.entities.UserDetailed) {
+function onFollowChange(user: Speechka.entities.UserDetailed) {
 	if (user.id === props.user.id) {
 		isFollowing = user.isFollowing;
 		hasPendingFollowRequestFromYou = user.hasPendingFollowRequestFromYou;

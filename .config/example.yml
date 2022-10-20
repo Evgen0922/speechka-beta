@@ -38,11 +38,11 @@ db:
   port: 5432
 
   # Database name
-  db: misskey
+  db: speechka
 
   # Auth
-  user: example-misskey-user
-  pass: example-misskey-pass
+  user: example-speechka-user
+  pass: example-speechka-pass
 
   # Whether disable Caching queries
   #disableCache: true

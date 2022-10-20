@@ -22,13 +22,13 @@
 
 <script lang="ts" setup>
 import { watch } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import { getStaticImageUrl } from '@/scripts/get-static-image-url';
 import ImgWithBlurhash from '@/components/MkImgWithBlurhash.vue';
 import { defaultStore } from '@/store';
 
 const props = defineProps<{
-	image: misskey.entities.DriveFile;
+	image: speechka.entities.DriveFile;
 	raw?: boolean;
 }>();
 

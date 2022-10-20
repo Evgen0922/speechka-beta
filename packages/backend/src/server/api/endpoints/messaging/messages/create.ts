@@ -68,18 +68,18 @@ export const paramDef = {
 	type: 'object',
 	properties: {
 		text: { type: 'string', nullable: true, maxLength: 3000 },
-		fileId: { type: 'string', format: 'misskey:id' },
+		fileId: { type: 'string', format: 'speechka:id' },
 	},
 	anyOf: [
 		{
 			properties: {
-				userId: { type: 'string', format: 'misskey:id' },
+				userId: { type: 'string', format: 'speechka:id' },
 			},
 			required: ['userId'],
 		},
 		{
 			properties: {
-				groupId: { type: 'string', format: 'misskey:id' },
+				groupId: { type: 'string', format: 'speechka:id' },
 			},
 			required: ['groupId'],
 		},

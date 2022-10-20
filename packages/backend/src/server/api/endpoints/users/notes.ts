@@ -35,11 +35,11 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		userId: { type: 'string', format: 'misskey:id' },
+		userId: { type: 'string', format: 'speechka:id' },
 		includeReplies: { type: 'boolean', default: true },
 		limit: { type: 'integer', minimum: 1, maximum: 100, default: 10 },
-		sinceId: { type: 'string', format: 'misskey:id' },
-		untilId: { type: 'string', format: 'misskey:id' },
+		sinceId: { type: 'string', format: 'speechka:id' },
+		untilId: { type: 'string', format: 'speechka:id' },
 		sinceDate: { type: 'integer' },
 		untilDate: { type: 'integer' },
 		includeMyRenotes: { type: 'boolean', default: true },

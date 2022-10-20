@@ -44,7 +44,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		userId: { type: 'string', format: 'misskey:id' },
+		userId: { type: 'string', format: 'speechka:id' },
 		limit: { type: 'integer', minimum: 1, maximum: 100, default: 10 },
 	},
 	required: ['userId'],

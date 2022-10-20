@@ -6,12 +6,12 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import { $i } from '@/account';
 import XReaction from '@/components/MkReactionsViewer.reaction.vue';
 
 const props = defineProps<{
-	note: misskey.entities.Note;
+	note: speechka.entities.Note;
 }>();
 
 const initialReactions = new Set(Object.keys(props.note.reactions));

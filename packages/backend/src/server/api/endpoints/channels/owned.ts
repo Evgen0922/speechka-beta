@@ -23,8 +23,8 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		sinceId: { type: 'string', format: 'misskey:id' },
-		untilId: { type: 'string', format: 'misskey:id' },
+		sinceId: { type: 'string', format: 'speechka:id' },
+		untilId: { type: 'string', format: 'speechka:id' },
 		limit: { type: 'integer', minimum: 1, maximum: 100, default: 5 },
 	},
 	required: [],

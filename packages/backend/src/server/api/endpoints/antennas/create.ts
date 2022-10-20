@@ -37,8 +37,8 @@ export const paramDef = {
 	properties: {
 		name: { type: 'string', minLength: 1, maxLength: 100 },
 		src: { type: 'string', enum: ['home', 'all', 'users', 'list', 'group'] },
-		userListId: { type: 'string', format: 'misskey:id', nullable: true },
-		userGroupId: { type: 'string', format: 'misskey:id', nullable: true },
+		userListId: { type: 'string', format: 'speechka:id', nullable: true },
+		userGroupId: { type: 'string', format: 'speechka:id', nullable: true },
 		keywords: { type: 'array', items: {
 			type: 'array', items: {
 				type: 'string',

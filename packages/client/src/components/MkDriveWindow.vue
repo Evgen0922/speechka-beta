@@ -15,13 +15,13 @@
 
 <script lang="ts" setup>
 import { } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import XDrive from '@/components/MkDrive.vue';
 import XWindow from '@/components/MkWindow.vue';
 import { i18n } from '@/i18n';
 
 defineProps<{
-	initialFolder?: Misskey.entities.DriveFolder;
+	initialFolder?: Speechka.entities.DriveFolder;
 }>();
 
 const emit = defineEmits<{

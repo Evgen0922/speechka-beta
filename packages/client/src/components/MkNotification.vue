@@ -74,7 +74,7 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import XReactionIcon from '@/components/MkReactionIcon.vue';
 import MkFollowButton from '@/components/MkFollowButton.vue';
 import XReactionTooltip from '@/components/MkReactionTooltip.vue';
@@ -87,7 +87,7 @@ import { stream } from '@/stream';
 import { useTooltip } from '@/scripts/use-tooltip';
 
 const props = withDefaults(defineProps<{
-	notification: misskey.entities.Notification;
+	notification: speechka.entities.Notification;
 	withTime?: boolean;
 	full?: boolean;
 }>(), {

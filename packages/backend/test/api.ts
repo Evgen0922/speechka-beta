@@ -37,7 +37,7 @@ describe('API', () => {
 			assert.strictEqual(res.status, 400);
 		}));
 
-		it('invalid misskey:id (empty string)', async(async () => {
+		it('invalid speechka:id (empty string)', async(async () => {
 			const res = await request('/test', {
 				required: true,
 				id: '',
@@ -45,7 +45,7 @@ describe('API', () => {
 			assert.strictEqual(res.status, 400);
 		}));
 
-		it('valid misskey:id', async(async () => {
+		it('valid speechka:id', async(async () => {
 			const res = await request('/test', {
 				required: true,
 				id: '8wvhjghbxu',

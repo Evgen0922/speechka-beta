@@ -105,7 +105,7 @@
 <script lang="ts" setup>
 import { computed, inject, onMounted, onUnmounted, reactive, ref, Ref } from 'vue';
 import * as mfm from 'mfm-js';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import MkNoteSub from '@/components/MkNoteSub.vue';
 import XNoteHeader from '@/components/MkNoteHeader.vue';
 import XNoteSimple from '@/components/MkNoteSimple.vue';
@@ -131,7 +131,7 @@ import { getNoteMenu } from '@/scripts/get-note-menu';
 import { useNoteCapture } from '@/scripts/use-note-capture';
 
 const props = defineProps<{
-	note: misskey.entities.Note;
+	note: speechka.entities.Note;
 	pinned?: boolean;
 }>();
 
@@ -162,7 +162,7 @@ const menuButton = ref<HTMLElement>();
 const renoteButton = ref<InstanceType<typeof XRenoteButton>>();
 const renoteTime = ref<HTMLElement>();
 const reactButton = ref<HTMLElement>();
-let appearNote = $computed(() => isRenote ? note.renote as misskey.entities.Note : note);
+let appearNote = $computed(() => isRenote ? note.renote as speechka.entities.Note : note);
 const isMyRenote = $i && ($i.id === note.userId);
 const showContent = ref(false);
 const isLong = (appearNote.cw == null && appearNote.text != null && (
@@ -225,7 +225,7 @@ function undoReact(note): void {
 	});
 }
 
-const currentClipPage = inject<Ref<misskey.entities.Clip> | null>('currentClipPage', null);
+const currentClipPage = inject<Ref<speechka.entities.Clip> | null>('currentClipPage', null);
 
 function onContextmenu(ev: MouseEvent): void {
 	const isLink = (el: HTMLElement) => {

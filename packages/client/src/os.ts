@@ -3,7 +3,7 @@
 import { Component, markRaw, Ref, ref, defineAsyncComponent } from 'vue';
 import { EventEmitter } from 'eventemitter3';
 import insertTextAtCursor from 'insert-text-at-cursor';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import { apiUrl, url } from '@/config';
 import MkPostFormDialog from '@/components/MkPostFormDialog.vue';
 import MkWaitingDialog from '@/components/MkWaitingDialog.vue';
@@ -12,7 +12,7 @@ import { $i } from '@/account';
 
 export const pendingApiRequestsCount = ref(0);
 
-const apiClient = new Misskey.api.APIClient({
+const apiClient = new Speechka.api.APIClient({
 	origin: url,
 });
 
@@ -438,9 +438,9 @@ export async function pickEmoji(src: HTMLElement | null, opts) {
 	});
 }
 
-export async function cropImage(image: Misskey.entities.DriveFile, options: {
+export async function cropImage(image: Speechka.entities.DriveFile, options: {
 	aspectRatio: number;
-}): Promise<Misskey.entities.DriveFile> {
+}): Promise<Speechka.entities.DriveFile> {
 	return new Promise((resolve, reject) => {
 		popup(defineAsyncComponent(() => import('@/components/MkCropperDialog.vue')), {
 			file: image,

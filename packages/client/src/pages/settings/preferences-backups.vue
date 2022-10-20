@@ -101,13 +101,13 @@ const coldDeviceStorageSaveKeys: (keyof typeof ColdDeviceStorage.default)[] = [
 
 const scope = ['clientPreferencesProfiles'];
 
-const profileProps = ['name', 'createdAt', 'updatedAt', 'misskeyVersion', 'settings'];
+const profileProps = ['name', 'createdAt', 'updatedAt', 'speechkaVersion', 'settings'];
 
 type Profile = {
 	name: string;
 	createdAt: string;
 	updatedAt: string | null;
-	misskeyVersion: string;
+	speechkaVersion: string;
 	host: string;
 	settings: {
 		hot: Record<keyof typeof defaultStoreSaveKeys, unknown>;
@@ -138,7 +138,7 @@ function validate(profile: unknown): void {
 	if (Object.keys(profile).some(key => !profileProps.includes(key))) throw new Error('Unnecessary properties exist');
 
 	if (!profile.name) throw new Error('Missing required prop: name');
-	if (!profile.misskeyVersion) throw new Error('Missing required prop: misskeyVersion');
+	if (!profile.speechkaVersion) throw new Error('Missing required prop: speechkaVersion');
 	
 	// Check if createdAt and updatedAt is Date
 	// https://zenn.dev/lollipop_onl/articles/eoz-judge-js-invalid-date
@@ -195,7 +195,7 @@ async function saveNew(): Promise<void> {
 		name,
 		createdAt: (new Date()).toISOString(),
 		updatedAt: null,
-		misskeyVersion: version,
+		speechkaVersion: version,
 		host,
 		settings: getSettings(),
 	};
@@ -235,13 +235,11 @@ function loadFile(): void {
 		const id = uuid();
 		await os.apiWithDialog('i/registry/set', { scope, key: id, value: profile });
 
-		// 一応廃棄
-		(window as any).__misskey_input_ref__ = null;
+		(window as any).__speechka_input_ref__ = null;
 	};
 
-	// https://qiita.com/fukasawah/items/b9dc732d95d99551013d
-	// iOS Safari で正常に動かす為のおまじない
-	(window as any).__misskey_input_ref__ = input;
+	
+	(window as any).__speechka_input_ref__ = input;
 
 	input.click();
 }
@@ -258,8 +256,8 @@ async function applyProfile(id: string): Promise<void> {
 	});
 	if (cancel1) return;
 
-	// TODO: バージョン or ホストが違ったらさらに警告を表示
-
+	
+	
 	const settings = profile.settings;
 
 	// defaultStore
@@ -336,7 +334,7 @@ async function save(id: string): Promise<void> {
 		name,
 		createdAt,
 		updatedAt: (new Date()).toISOString(),
-		misskeyVersion: version,
+		speechkaVersion: version,
 		host,
 		settings: getSettings(),
 	};

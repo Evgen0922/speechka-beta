@@ -116,7 +116,7 @@
 <script lang="ts" setup>
 import { computed, inject, onMounted, onUnmounted, reactive, ref } from 'vue';
 import * as mfm from 'mfm-js';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import MkNoteSub from '@/components/MkNoteSub.vue';
 import XNoteSimple from '@/components/MkNoteSimple.vue';
 import XReactionsViewer from '@/components/MkReactionsViewer.vue';
@@ -141,7 +141,7 @@ import { getNoteMenu } from '@/scripts/get-note-menu';
 import { useNoteCapture } from '@/scripts/use-note-capture';
 
 const props = defineProps<{
-	note: misskey.entities.Note;
+	note: speechka.entities.Note;
 	pinned?: boolean;
 }>();
 
@@ -172,7 +172,7 @@ const menuButton = ref<HTMLElement>();
 const renoteButton = ref<InstanceType<typeof XRenoteButton>>();
 const renoteTime = ref<HTMLElement>();
 const reactButton = ref<HTMLElement>();
-let appearNote = $computed(() => isRenote ? note.renote as misskey.entities.Note : note);
+let appearNote = $computed(() => isRenote ? note.renote as speechka.entities.Note : note);
 const isMyRenote = $i && ($i.id === note.userId);
 const showContent = ref(false);
 const isDeleted = ref(false);
@@ -181,8 +181,8 @@ const translation = ref(null);
 const translating = ref(false);
 const urls = appearNote.text ? extractUrlFromMfm(mfm.parse(appearNote.text)) : null;
 const showTicker = (defaultStore.state.instanceTicker === 'always') || (defaultStore.state.instanceTicker === 'remote' && appearNote.user.instance);
-const conversation = ref<misskey.entities.Note[]>([]);
-const replies = ref<misskey.entities.Note[]>([]);
+const conversation = ref<speechka.entities.Note[]>([]);
+const replies = ref<speechka.entities.Note[]>([]);
 
 const keymap = {
 	'r': () => reply(true),

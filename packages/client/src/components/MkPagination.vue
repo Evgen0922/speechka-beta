@@ -34,7 +34,7 @@
 
 <script lang="ts" setup>
 import { computed, ComputedRef, isRef, markRaw, onActivated, onDeactivated, Ref, ref, watch } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import * as os from '@/os';
 import { onScrollTop, isTopVisible, getScrollPosition, getScrollContainer } from '@/scripts/scroll';
 import MkButton from '@/components/MkButton.vue';
@@ -42,10 +42,10 @@ import { i18n } from '@/i18n';
 
 const SECOND_FETCH_LIMIT = 30;
 
-export type Paging<E extends keyof misskey.Endpoints = keyof misskey.Endpoints> = {
+export type Paging<E extends keyof speechka.Endpoints = keyof speechka.Endpoints> = {
 	endpoint: E;
 	limit: number;
-	params?: misskey.Endpoints[E]['req'] | ComputedRef<misskey.Endpoints[E]['req']>;
+	params?: speechka.Endpoints[E]['req'] | ComputedRef<speechka.Endpoints[E]['req']>;
 
 	noPaging?: boolean;
 

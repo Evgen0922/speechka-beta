@@ -24,7 +24,7 @@ export const paramDef = {
 		{
 			type: 'object',
 			properties: {
-				notificationId: { type: 'string', format: 'misskey:id' },
+				notificationId: { type: 'string', format: 'speechka:id' },
 			},
 			required: ['notificationId'],
 		},
@@ -33,7 +33,7 @@ export const paramDef = {
 			properties: {
 				notificationIds: {
 					type: 'array',
-					items: { type: 'string', format: 'misskey:id' },
+					items: { type: 'string', format: 'speechka:id' },
 					maxItems: 100,
 				},
 			},

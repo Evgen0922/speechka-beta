@@ -24,9 +24,9 @@ export const paramDef = {
 	type: 'object',
 	properties: {
 		limit: { type: 'integer', minimum: 1, maximum: 100, default: 10 },
-		sinceId: { type: 'string', format: 'misskey:id' },
-		untilId: { type: 'string', format: 'misskey:id' },
-		folderId: { type: 'string', format: 'misskey:id', nullable: true, default: null },
+		sinceId: { type: 'string', format: 'speechka:id' },
+		untilId: { type: 'string', format: 'speechka:id' },
+		folderId: { type: 'string', format: 'speechka:id', nullable: true, default: null },
 		type: { type: 'string', nullable: true, pattern: /^[a-zA-Z\/\-*]+$/.toString().slice(1, -1) },
 	},
 	required: [],

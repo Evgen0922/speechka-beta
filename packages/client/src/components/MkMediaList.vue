@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import PhotoSwipe from 'photoswipe';
 import 'photoswipe/style.css';
@@ -26,7 +26,7 @@ import { FILE_TYPE_BROWSERSAFE } from '@/const';
 import { defaultStore } from '@/store';
 
 const props = defineProps<{
-	mediaList: misskey.entities.DriveFile[];
+	mediaList: speechka.entities.DriveFile[];
 	raw?: boolean;
 }>();
 
@@ -37,7 +37,7 @@ onMounted(() => {
 	const lightbox = new PhotoSwipeLightbox({
 		dataSource: props.mediaList
 			.filter(media => {
-				if (media.type === 'image/svg+xml') return true; // svgのwebpublicはpngなのでtrue
+				if (media.type === 'image/svg+xml') return true; 
 				return media.type.startsWith('image') && FILE_TYPE_BROWSERSAFE.includes(media.type);
 			})
 			.map(media => {
@@ -94,9 +94,9 @@ onMounted(() => {
 	lightbox.init();
 });
 
-const previewable = (file: misskey.entities.DriveFile): boolean => {
-	if (file.type === 'image/svg+xml') return true; // svgのwebpublic/thumbnailはpngなのでtrue
-	// FILE_TYPE_BROWSERSAFEに適合しないものはブラウザで表示するのに不適切
+const previewable = (file: speechka.entities.DriveFile): boolean => {
+	if (file.type === 'image/svg+xml') return true; 
+	
 	return (file.type.startsWith('video') || file.type.startsWith('image')) && FILE_TYPE_BROWSERSAFE.includes(file.type);
 };
 </script>

@@ -52,8 +52,8 @@
 
 <script lang="ts" setup>
 import { computed, watch, onMounted, nextTick, onBeforeUnmount } from 'vue';
-import * as Misskey from 'misskey-js';
-import * as Acct from 'misskey-js/built/acct';
+import * as Speechka from 'speechka-js';
+import * as Acct from 'speechka-js/built/acct';
 import XMessage from './messaging-room.message.vue';
 import XForm from './messaging-room.form.vue';
 import XList from '@/components/MkDateSeparatedList.vue';
@@ -77,10 +77,10 @@ let formEl = $ref<InstanceType<typeof XForm>>();
 let pagingComponent = $ref<InstanceType<typeof MkPagination>>();
 
 let fetching = $ref(true);
-let user: Misskey.entities.UserDetailed | null = $ref(null);
-let group: Misskey.entities.UserGroup | null = $ref(null);
-let typers: Misskey.entities.User[] = $ref([]);
-let connection: Misskey.ChannelConnection<Misskey.Channels['messaging']> | null = $ref(null);
+let user: Speechka.entities.UserDetailed | null = $ref(null);
+let group: Speechka.entities.UserGroup | null = $ref(null);
+let typers: Speechka.entities.User[] = $ref([]);
+let connection: Speechka.ChannelConnection<Speechka.Channels['messaging']> | null = $ref(null);
 let showIndicator = $ref(false);
 const {
 	animation,

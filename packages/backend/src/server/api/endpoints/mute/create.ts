@@ -37,7 +37,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		userId: { type: 'string', format: 'misskey:id' },
+		userId: { type: 'string', format: 'speechka:id' },
 		expiresAt: {
 			type: 'integer',
 			nullable: true,

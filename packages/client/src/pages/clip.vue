@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import { computed, watch, provide } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import XNotes from '@/components/MkNotes.vue';
 import { $i } from '@/account';
 import { i18n } from '@/i18n';
@@ -31,7 +31,7 @@ const props = defineProps<{
 	clipId: string,
 }>();
 
-let clip: misskey.entities.Clip = $ref<misskey.entities.Clip>();
+let clip: speechka.entities.Clip = $ref<speechka.entities.Clip>();
 const pagination = {
 	endpoint: 'clips/notes' as const,
 	limit: 10,

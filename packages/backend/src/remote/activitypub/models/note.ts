@@ -52,19 +52,11 @@ export function validateNote(object: any, uri: string) {
 	return null;
 }
 
-/**
- * Noteをフェッチします。
- *
- * Misskeyに対象のNoteが登録されていればそれを返します。
- */
 export async function fetchNote(object: string | IObject): Promise<Note | null> {
 	const dbResolver = new DbResolver();
 	return await dbResolver.getNoteFromApId(object);
 }
 
-/**
- * Noteを作成します。
- */
 export async function createNote(value: string | IObject, resolver?: Resolver, silent = false): Promise<Note | null> {
 	if (resolver == null) resolver = new Resolver();
 
@@ -89,10 +81,8 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 
 	logger.info(`Creating the Note: ${note.id}`);
 
-	// 投稿者をフェッチ
 	const actor = await resolvePerson(getOneApId(note.attributedTo), resolver) as CacheableRemoteUser;
 
-	// 投稿者が凍結されていたらスキップ
 	if (actor.isSuspended) {
 		throw new Error('actor has been suspended');
 	}
@@ -101,23 +91,18 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 	let visibility = noteAudience.visibility;
 	const visibleUsers = noteAudience.visibleUsers;
 
-	// Audience (to, cc) が指定されてなかった場合
 	if (visibility === 'specified' && visibleUsers.length === 0) {
-		if (typeof value === 'string') {	// 入力がstringならばresolverでGETが発生している
-			// こちらから匿名GET出来たものならばpublic
+		if (typeof value === 'string') {	
+			
 			visibility = 'public';
 		}
 	}
 
-	let isTalk = note._misskey_talk && visibility === 'specified';
+	let isTalk = note._speechka_talk && visibility === 'specified';
 
 	const apMentions = await extractApMentions(note.tag);
 	const apHashtags = await extractApHashtags(note.tag);
 
-	// 添付ファイル
-	// TODO: attachmentは必ずしもImageではない
-	// TODO: attachmentは必ずしも配列ではない
-	// Noteがsensitiveなら添付もsensitiveにする
 	const limit = promiseLimit(2);
 
 	note.attachment = Array.isArray(note.attachment) ? note.attachment : note.attachment ? [note.attachment] : [];
@@ -127,7 +112,7 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 			.filter(image => image != null)
 		: [];
 
-	// リプライ
+	
 	const reply: Note | null = note.inReplyTo
 		? await resolveNote(note.inReplyTo, resolver).then(x => {
 			if (x == null) {
@@ -137,7 +122,7 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 				return x;
 			}
 		}).catch(async e => {
-			// トークだったらinReplyToのエラーは無視
+			
 			const uri = getApId(note.inReplyTo);
 			if (uri.startsWith(config.url + '/')) {
 				const id = uri.split('/').pop();
@@ -153,10 +138,10 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 		})
 		: null;
 
-	// 引用
+	
 	let quote: Note | undefined | null;
 
-	if (note._misskey_quote || note.quoteUrl) {
+	if (note._speechka_quote || note.quoteUrl) {
 		const tryResolveNote = async (uri: string): Promise<{
 			status: 'ok';
 			res: Note | null;
@@ -183,7 +168,7 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 			}
 		};
 
-		const uris = unique([note._misskey_quote, note.quoteUrl].filter((x): x is string => typeof x === 'string'));
+		const uris = unique([note._speechka_quote, note.quoteUrl].filter((x): x is string => typeof x === 'string'));
 		const results = await Promise.all(uris.map(uri => tryResolveNote(uri)));
 
 		quote = results.filter((x): x is { status: 'ok', res: Note | null } => x.status === 'ok').map(x => x.res).find(x => x);
@@ -196,12 +181,12 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 
 	const cw = note.summary === '' ? null : note.summary;
 
-	// テキストのパース
+	
 	let text: string | null = null;
-	if (note.source?.mediaType === 'text/x.misskeymarkdown' && typeof note.source?.content === 'string') {
+	if (note.source?.mediaType === 'text/x.speechkamarkdown' && typeof note.source?.content === 'string') {
 		text = note.source.content;
-	} else if (typeof note._misskey_content !== 'undefined') {
-		text = note._misskey_content;
+	} else if (typeof note._speechka_content !== 'undefined') {
+		text = note._speechka_content;
 	} else if (typeof note.content === 'string') {
 		text = htmlToMfm(note.content, note.tag);
 	}
@@ -217,7 +202,7 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 				logger.info(`vote from AP: actor=${actor.username}@${actor.host}, note=${note.id}, choice=${name}`);
 				await vote(actor, reply, index);
 
-				// リモートフォロワーにUpdate配信
+				
 				deliverQuestionUpdate(reply.id);
 			}
 			return null;
@@ -264,24 +249,18 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 	}, silent);
 }
 
-/**
- * Noteを解決します。
- *
- * Misskeyに対象のNoteが登録されていればそれを返し、そうでなければ
- * リモートサーバーからフェッチしてMisskeyに登録しそれを返します。
- */
+
 export async function resolveNote(value: string | IObject, resolver?: Resolver): Promise<Note | null> {
 	const uri = typeof value === 'string' ? value : value.id;
 	if (uri == null) throw new Error('missing uri');
 
-	// ブロックしてたら中断
 	const meta = await fetchMeta();
 	if (meta.blockedHosts.includes(extractDbHost(uri))) throw { statusCode: 451 };
 
 	const unlock = await getApLock(uri);
 
 	try {
-		//#region このサーバーに既に登録されていたらそれを返す
+		
 		const exist = await fetchNote(uri);
 
 		if (exist) {
@@ -293,9 +272,6 @@ export async function resolveNote(value: string | IObject, resolver?: Resolver):
 			throw new StatusError('cannot resolve local note', 400, 'cannot resolve local note');
 		}
 
-		// リモートサーバーからフェッチしてきて登録
-		// ここでuriの代わりに添付されてきたNote Objectが指定されていると、サーバーフェッチを経ずにノートが生成されるが
-		// 添付されてきたNote Objectは偽装されている可能性があるため、常にuriを指定してサーバーフェッチを行う。
 		return await createNote(uri, resolver, true);
 	} finally {
 		unlock();

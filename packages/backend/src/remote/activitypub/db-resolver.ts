@@ -55,9 +55,6 @@ export default class DbResolver {
 	constructor() {
 	}
 
-	/**
-	 * AP Note => Misskey Note in DB
-	 */
 	public async getNoteFromApId(value: string | IObject): Promise<Note | null> {
 		const parsed = parseUri(value);
 
@@ -90,9 +87,6 @@ export default class DbResolver {
 		}
 	}
 
-	/**
-	 * AP Person => Misskey User in DB
-	 */
 	public async getUserFromApId(value: string | IObject): Promise<CacheableUser | null> {
 		const parsed = parseUri(value);
 
@@ -109,9 +103,6 @@ export default class DbResolver {
 		}
 	}
 
-	/**
-	 * AP KeyId => Misskey User and Key
-	 */
 	public async getAuthUserFromKeyId(keyId: string): Promise<{
 		user: CacheableRemoteUser;
 		key: UserPublickey;
@@ -134,9 +125,6 @@ export default class DbResolver {
 		};
 	}
 
-	/**
-	 * AP Actor id => Misskey User and Key
-	 */
 	public async getAuthUserFromApId(uri: string): Promise<{
 		user: CacheableRemoteUser;
 		key: UserPublickey | null;

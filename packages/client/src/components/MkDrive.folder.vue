@@ -29,13 +29,13 @@
 
 <script lang="ts" setup>
 import { computed, defineAsyncComponent, ref } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import * as os from '@/os';
 import { i18n } from '@/i18n';
 import { defaultStore } from '@/store';
 
 const props = withDefaults(defineProps<{
-	folder: Misskey.entities.DriveFolder;
+	folder: Speechka.entities.DriveFolder;
 	isSelected?: boolean;
 	selectMode?: boolean;
 }>(), {
@@ -44,11 +44,11 @@ const props = withDefaults(defineProps<{
 });
 
 const emit = defineEmits<{
-	(ev: 'chosen', v: Misskey.entities.DriveFolder): void;
-	(ev: 'move', v: Misskey.entities.DriveFolder): void;
-	(ev: 'upload', file: File, folder: Misskey.entities.DriveFolder);
-	(ev: 'removeFile', v: Misskey.entities.DriveFile['id']): void;
-	(ev: 'removeFolder', v: Misskey.entities.DriveFolder['id']): void;
+	(ev: 'chosen', v: Speechka.entities.DriveFolder): void;
+	(ev: 'move', v: Speechka.entities.DriveFolder): void;
+	(ev: 'upload', file: File, folder: Speechka.entities.DriveFolder);
+	(ev: 'removeFile', v: Speechka.entities.DriveFile['id']): void;
+	(ev: 'removeFolder', v: Speechka.entities.DriveFolder['id']): void;
 	(ev: 'dragstart'): void;
 	(ev: 'dragend'): void;
 }>();

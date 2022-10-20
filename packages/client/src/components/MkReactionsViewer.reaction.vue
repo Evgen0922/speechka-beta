@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import { computed, onMounted, ref, watch } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import XDetails from '@/components/MkReactionsViewer.details.vue';
 import XReactionIcon from '@/components/MkReactionIcon.vue';
 import * as os from '@/os';
@@ -25,7 +25,7 @@ const props = defineProps<{
 	reaction: string;
 	count: number;
 	isInitial: boolean;
-	note: misskey.entities.Note;
+	note: speechka.entities.Note;
 }>();
 
 const buttonRef = ref<HTMLElement>();

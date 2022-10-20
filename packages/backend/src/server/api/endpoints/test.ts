@@ -15,7 +15,7 @@ export const paramDef = {
 		string: { type: 'string' },
 		default: { type: 'string', default: 'hello' },
 		nullableDefault: { type: 'string', nullable: true, default: 'hello' },
-		id: { type: 'string', format: 'misskey:id' },
+		id: { type: 'string', format: 'speechka:id' },
 	},
 	required: ['required'],
 } as const;

@@ -28,8 +28,8 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		clipId: { type: 'string', format: 'misskey:id' },
-		noteId: { type: 'string', format: 'misskey:id' },
+		clipId: { type: 'string', format: 'speechka:id' },
+		noteId: { type: 'string', format: 'speechka:id' },
 	},
 	required: ['clipId', 'noteId'],
 } as const;

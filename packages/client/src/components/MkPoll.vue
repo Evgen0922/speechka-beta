@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { computed, onUnmounted, ref, toRef } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import { sum } from '@/scripts/array';
 import { pleaseLogin } from '@/scripts/please-login';
 import * as os from '@/os';
@@ -31,7 +31,7 @@ import { i18n } from '@/i18n';
 import { useInterval } from '@/scripts/use-interval';
 
 const props = defineProps<{
-	note: misskey.entities.Note;
+	note: speechka.entities.Note;
 	readOnly?: boolean;
 }>();
 

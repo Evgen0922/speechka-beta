@@ -599,7 +599,7 @@ function index(note: Note) {
 	if (note.text == null || config.elasticsearch == null) return;
 
 	es!.index({
-		index: config.elasticsearch.index || 'misskey_note',
+		index: config.elasticsearch.index || 'speechka_note',
 		id: note.id.toString(),
 		body: {
 			text: normalizeForSearch(note.text),

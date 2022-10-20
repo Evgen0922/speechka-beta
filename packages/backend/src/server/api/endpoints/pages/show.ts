@@ -29,7 +29,7 @@ export const paramDef = {
 	anyOf: [
 		{
 			properties: {
-				pageId: { type: 'string', format: 'misskey:id' },
+				pageId: { type: 'string', format: 'speechka:id' },
 			},
 			required: ['pageId'],
 		},

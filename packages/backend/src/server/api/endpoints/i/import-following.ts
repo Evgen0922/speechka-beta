@@ -42,7 +42,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		fileId: { type: 'string', format: 'misskey:id' },
+		fileId: { type: 'string', format: 'speechka:id' },
 	},
 	required: ['fileId'],
 } as const;

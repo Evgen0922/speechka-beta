@@ -1,5 +1,5 @@
 import { reactive, ref } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import { readAndCompressImage } from 'browser-image-resizer';
 import { defaultStore } from '@/store';
 import { apiUrl } from '@/config';
@@ -33,7 +33,7 @@ export function uploadFile(
 	folder?: any,
 	name?: string,
 	keepOriginal: boolean = defaultStore.state.keepOriginalUploading,
-): Promise<Misskey.entities.DriveFile> {
+): Promise<Speechka.entities.DriveFile> {
 	if (folder && typeof folder === 'object') folder = folder.id;
 
 	return new Promise((resolve, reject) => {

@@ -8,13 +8,13 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { length } from 'stringz';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import { concat } from '@/scripts/array';
 import { i18n } from '@/i18n';
 
 const props = defineProps<{
 	modelValue: boolean;
-	note: misskey.entities.Note;
+	note: speechka.entities.Note;
 }>();
 
 const emit = defineEmits<{

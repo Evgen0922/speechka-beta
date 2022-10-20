@@ -287,14 +287,13 @@ router.get(['/@:user', '/@:user/:sub'], async (ctx, next) => {
 			user, profile, me,
 			avatarUrl: await Users.getAvatarUrl(user),
 			sub: ctx.params.sub,
-			instanceName: meta.name || 'Misskey',
+			instanceName: meta.name || 'Speechka',
 			icon: meta.iconUrl,
 			themeColor: meta.themeColor,
 		});
 		ctx.set('Cache-Control', 'public, max-age=15');
 	} else {
-		// リモートユーザーなので
-		// モデレータがAPI経由で参照可能にするために404にはしない
+		
 		await next();
 	}
 });
@@ -331,7 +330,7 @@ router.get('/notes/:note', async (ctx, next) => {
 			avatarUrl: await Users.getAvatarUrl(await Users.findOneByOrFail({ id: note.userId })),
 			// TODO: Let locale changeable by instance setting
 			summary: getNoteSummary(_note),
-			instanceName: meta.name || 'Misskey',
+			instanceName: meta.name || 'Speechka',
 			icon: meta.iconUrl,
 			themeColor: meta.themeColor,
 		});
@@ -367,7 +366,7 @@ router.get('/@:user/pages/:page', async (ctx, next) => {
 			page: _page,
 			profile,
 			avatarUrl: await Users.getAvatarUrl(await Users.findOneByOrFail({ id: page.userId })),
-			instanceName: meta.name || 'Misskey',
+			instanceName: meta.name || 'Speechka',
 			icon: meta.iconUrl,
 			themeColor: meta.themeColor,
 		});
@@ -398,7 +397,7 @@ router.get('/clips/:clip', async (ctx, next) => {
 			clip: _clip,
 			profile,
 			avatarUrl: await Users.getAvatarUrl(await Users.findOneByOrFail({ id: clip.userId })),
-			instanceName: meta.name || 'Misskey',
+			instanceName: meta.name || 'Speechka',
 			icon: meta.iconUrl,
 			themeColor: meta.themeColor,
 		});
@@ -423,7 +422,7 @@ router.get('/gallery/:post', async (ctx, next) => {
 			post: _post,
 			profile,
 			avatarUrl: await Users.getAvatarUrl(await Users.findOneByOrFail({ id: post.userId })),
-			instanceName: meta.name || 'Misskey',
+			instanceName: meta.name || 'Speechka',
 			icon: meta.iconUrl,
 			themeColor: meta.themeColor,
 		});
@@ -447,7 +446,7 @@ router.get('/channels/:channel', async (ctx, next) => {
 		const meta = await fetchMeta();
 		await ctx.render('channel', {
 			channel: _channel,
-			instanceName: meta.name || 'Misskey',
+			instanceName: meta.name || 'Speechka',
 			icon: meta.iconUrl,
 			themeColor: meta.themeColor,
 		});

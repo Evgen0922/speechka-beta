@@ -52,13 +52,13 @@ export const paramDef = {
 		sensitiveMediaDetectionSensitivity: { type: 'string', enum: ['medium', 'low', 'high', 'veryLow', 'veryHigh'] },
 		setSensitiveFlagAutomatically: { type: 'boolean' },
 		enableSensitiveMediaDetectionForVideos: { type: 'boolean' },
-		proxyAccountId: { type: 'string', format: 'misskey:id', nullable: true },
+		proxyAccountId: { type: 'string', format: 'speechka:id', nullable: true },
 		maintainerName: { type: 'string', nullable: true },
 		maintainerEmail: { type: 'string', nullable: true },
 		pinnedPages: { type: 'array', items: {
 			type: 'string',
 		} },
-		pinnedClipId: { type: 'string', format: 'misskey:id', nullable: true },
+		pinnedClipId: { type: 'string', format: 'speechka:id', nullable: true },
 		langs: { type: 'array', items: {
 			type: 'string',
 		} },

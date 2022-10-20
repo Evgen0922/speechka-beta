@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "misskey.fullname" . }}
+  name: {{ include "speechka.fullname" . }}
   labels:
-		{{- include "misskey.labels" . | nindent 4 }}
+		{{- include "speechka.labels" . | nindent 4 }}
 spec:
   selector:
     matchLabels:
-			{{- include "misskey.selectorLabels" . | nindent 6 }}
+			{{- include "speechka.selectorLabels" . | nindent 6 }}
   replicas: 1
   template:
     metadata:
       labels:
-				{{- include "misskey.selectorLabels" . | nindent 8 }}
+				{{- include "speechka.selectorLabels" . | nindent 8 }}
     spec:
       containers:
-        - name: misskey
+        - name: speechka
           image: {{ .Values.image }}
           env:
             - name: NODE_ENV
               value: {{ .Values.environment }}
           volumeMounts:
-            - name: {{ include "misskey.fullname" . }}-configuration
-              mountPath: /misskey/.config
+            - name: {{ include "speechka.fullname" . }}-configuration
+              mountPath: /speechka/.config
               readOnly: true
           ports:
             - containerPort: 3000
@@ -30,11 +30,11 @@ spec:
           image: postgres:14-alpine
           env:
             - name: POSTGRES_USER
-              value: "example-misskey-user"
+              value: "example-speechka-user"
             - name: POSTGRES_PASSWORD
-              value: "example-misskey-pass"
+              value: "example-speechka-pass"
             - name: POSTGRES_DB
-              value: "misskey"
+              value: "speechka"
           ports:
             - containerPort: 5432
         - name: redis
@@ -42,6 +42,6 @@ spec:
           ports:
             - containerPort: 6379
       volumes:
-        - name: {{ include "misskey.fullname" . }}-configuration
+        - name: {{ include "speechka.fullname" . }}-configuration
           configMap:
-            name: {{ include "misskey.fullname" . }}-configuration
+            name: {{ include "speechka.fullname" . }}-configuration

@@ -1,5 +1,5 @@
 import { defineAsyncComponent, Ref, inject } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import { pleaseLogin } from './please-login';
 import { $i } from '@/account';
 import { i18n } from '@/i18n';
@@ -10,12 +10,12 @@ import { url } from '@/config';
 import { noteActions } from '@/store';
 
 export function getNoteMenu(props: {
-	note: misskey.entities.Note;
+	note: speechka.entities.Note;
 	menuButton: Ref<HTMLElement>;
 	translation: Ref<any>;
 	translating: Ref<boolean>;
 	isDeleted: Ref<boolean>;
-	currentClipPage?: Ref<misskey.entities.Clip>;
+	currentClipPage?: Ref<speechka.entities.Clip>;
 }) {
 	const isRenote = (
 		props.note.renote != null &&
@@ -24,7 +24,7 @@ export function getNoteMenu(props: {
 		props.note.poll == null
 	);
 
-	const appearNote = isRenote ? props.note.renote as misskey.entities.Note : props.note;
+	const appearNote = isRenote ? props.note.renote as speechka.entities.Note : props.note;
 
 	function del(): void {
 		os.confirm({

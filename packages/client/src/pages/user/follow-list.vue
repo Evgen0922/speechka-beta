@@ -10,12 +10,12 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import MkUserInfo from '@/components/MkUserInfo.vue';
 import MkPagination from '@/components/MkPagination.vue';
 
 const props = defineProps<{
-	user: misskey.entities.User;
+	user: speechka.entities.User;
 	type: 'following' | 'followers';
 }>();
 

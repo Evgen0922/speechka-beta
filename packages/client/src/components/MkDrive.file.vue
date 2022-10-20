@@ -33,7 +33,7 @@
 
 <script lang="ts" setup>
 import { computed, defineAsyncComponent, ref } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import copyToClipboard from '@/scripts/copy-to-clipboard';
 import MkDriveFileThumbnail from '@/components/MkDriveFileThumbnail.vue';
 import bytes from '@/filters/bytes';
@@ -42,7 +42,7 @@ import { i18n } from '@/i18n';
 import { $i } from '@/account';
 
 const props = withDefaults(defineProps<{
-	file: Misskey.entities.DriveFile;
+	file: Speechka.entities.DriveFile;
 	isSelected?: boolean;
 	selectMode?: boolean;
 }>(), {
@@ -51,7 +51,7 @@ const props = withDefaults(defineProps<{
 });
 
 const emit = defineEmits<{
-	(ev: 'chosen', r: Misskey.entities.DriveFile): void;
+	(ev: 'chosen', r: Speechka.entities.DriveFile): void;
 	(ev: 'dragstart'): void;
 	(ev: 'dragend'): void;
 }>();

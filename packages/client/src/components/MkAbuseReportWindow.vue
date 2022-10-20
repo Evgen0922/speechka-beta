@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import XWindow from '@/components/MkWindow.vue';
 import MkTextarea from '@/components/form/textarea.vue';
 import MkButton from '@/components/MkButton.vue';
@@ -32,7 +32,7 @@ import * as os from '@/os';
 import { i18n } from '@/i18n';
 
 const props = defineProps<{
-	user: Misskey.entities.User;
+	user: Speechka.entities.User;
 	initialComment?: string;
 }>();
 

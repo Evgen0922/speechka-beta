@@ -31,8 +31,8 @@ export const paramDef = {
 	type: 'object',
 	properties: {
 		query: { type: 'string' },
-		sinceId: { type: 'string', format: 'misskey:id' },
-		untilId: { type: 'string', format: 'misskey:id' },
+		sinceId: { type: 'string', format: 'speechka:id' },
+		untilId: { type: 'string', format: 'speechka:id' },
 		limit: { type: 'integer', minimum: 1, maximum: 100, default: 10 },
 		offset: { type: 'integer', default: 0 },
 		host: {
@@ -40,8 +40,8 @@ export const paramDef = {
 			nullable: true,
 			description: 'The local host is represented with `null`.',
 		},
-		userId: { type: 'string', format: 'misskey:id', nullable: true, default: null },
-		channelId: { type: 'string', format: 'misskey:id', nullable: true, default: null },
+		userId: { type: 'string', format: 'speechka:id', nullable: true, default: null },
+		channelId: { type: 'string', format: 'speechka:id', nullable: true, default: null },
 	},
 	required: ['query'],
 } as const;
@@ -102,7 +102,7 @@ export default define(meta, paramDef, async (ps, me) => {
 			: [];
 
 		const result = await es.search({
-			index: config.elasticsearch.index || 'misskey_note',
+			index: config.elasticsearch.index || 'speechka_note',
 			body: {
 				size: ps.limit,
 				from: ps.offset,

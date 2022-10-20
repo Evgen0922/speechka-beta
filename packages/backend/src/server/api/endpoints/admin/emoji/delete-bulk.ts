@@ -16,7 +16,7 @@ export const paramDef = {
 	type: 'object',
 	properties: {
 		ids: { type: 'array', items: {
-			type: 'string', format: 'misskey:id',
+			type: 'string', format: 'speechka:id',
 		} },
 	},
 	required: ['ids'],

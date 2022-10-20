@@ -85,7 +85,7 @@ export const paramDef = {
 	properties: {
 		visibility: { type: 'string', enum: ['public', 'home', 'followers', 'specified'], default: 'public' },
 		visibleUserIds: { type: 'array', uniqueItems: true, items: {
-			type: 'string', format: 'misskey:id',
+			type: 'string', format: 'speechka:id',
 		} },
 		text: { type: 'string', maxLength: MAX_NOTE_TEXT_LENGTH, nullable: true },
 		cw: { type: 'string', nullable: true, maxLength: 100 },
@@ -98,7 +98,7 @@ export const paramDef = {
 			uniqueItems: true,
 			minItems: 1,
 			maxItems: 16,
-			items: { type: 'string', format: 'misskey:id' },
+			items: { type: 'string', format: 'speechka:id' },
 		},
 		mediaIds: {
 			deprecated: true,
@@ -107,11 +107,11 @@ export const paramDef = {
 			uniqueItems: true,
 			minItems: 1,
 			maxItems: 16,
-			items: { type: 'string', format: 'misskey:id' },
+			items: { type: 'string', format: 'speechka:id' },
 		},
-		replyId: { type: 'string', format: 'misskey:id', nullable: true },
-		renoteId: { type: 'string', format: 'misskey:id', nullable: true },
-		channelId: { type: 'string', format: 'misskey:id', nullable: true },
+		replyId: { type: 'string', format: 'speechka:id', nullable: true },
+		renoteId: { type: 'string', format: 'speechka:id', nullable: true },
+		channelId: { type: 'string', format: 'speechka:id', nullable: true },
 		poll: {
 			type: 'object',
 			nullable: true,

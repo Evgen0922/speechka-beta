@@ -1,15 +1,15 @@
 
 declare var self: ServiceWorkerGlobalScope;
 
-import * as Misskey from 'misskey-js';
+import * as Speechka from 'speechka-js';
 import { SwMessage, swMessageOrderType } from '@/types';
 import { acct as getAcct } from '@/filters/user';
 import { getAccountFromId } from '@/scripts/get-account-from-id';
 import { getUrlWithLoginId } from '@/scripts/login-id';
 
-export const cli = new Misskey.api.APIClient({ origin, fetch: (...args) => fetch(...args) });
+export const cli = new Speechka.api.APIClient({ origin, fetch: (...args) => fetch(...args) });
 
-export async function api<E extends keyof Misskey.Endpoints>(endpoint: E, userId: string, options?: Misskey.Endpoints[E]['req']) {
+export async function api<E extends keyof Speechka.Endpoints>(endpoint: E, userId: string, options?: Speechka.Endpoints[E]['req']) {
 	const account = await getAccountFromId(userId);
 	if (!account) return;
 

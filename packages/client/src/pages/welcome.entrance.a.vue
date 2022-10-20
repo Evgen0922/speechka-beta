@@ -5,7 +5,7 @@
 		<XTimeline class="tl"/>
 		<div class="shape1"></div>
 		<div class="shape2"></div>
-		<img src="/client-assets/misskey.svg" class="misskey"/>
+		<img src="/client-assets/speechka.svg" class="speechka"/>
 		<div class="emojis">
 			<MkEmoji :normal="true" :no-style="true" emoji="👍"/>
 			<MkEmoji :normal="true" :no-style="true" emoji="❤"/>
@@ -24,7 +24,7 @@
 				</h1>
 				<div class="about">
 					<!-- eslint-disable-next-line vue/no-v-html -->
-					<div class="desc" v-html="meta.description || i18n.ts.headlineMisskey"></div>
+					<div class="desc" v-html="meta.description || i18n.ts.headlineSpeechka"></div>
 				</div>
 				<div class="action">
 					<MkButton inline rounded gradate data-cy-signup style="margin-right: 12px;" @click="signup()">{{ i18n.ts.signup }}</MkButton>
@@ -112,7 +112,7 @@ function showMenu(ev) {
 			os.pageWindow('/about');
 		},
 	}, {
-		text: i18n.ts.aboutMisskey,
+		text: i18n.ts.aboutSpeechka,
 		icon: 'fas fa-info-circle',
 		action: () => {
 			os.pageWindow('/about-speechka');
@@ -181,7 +181,7 @@ function showMenu(ev) {
 			opacity: 0.5;
 		}
 
-		> .misskey {
+		> .speechka {
 			position: absolute;
 			top: 42px;
 			left: 42px;

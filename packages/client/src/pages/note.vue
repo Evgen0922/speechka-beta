@@ -42,7 +42,7 @@
 
 <script lang="ts" setup>
 import { computed, defineComponent, watch } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import XNote from '@/components/MkNote.vue';
 import XNoteDetailed from '@/components/MkNoteDetailed.vue';
 import XNotes from '@/components/MkNotes.vue';
@@ -56,7 +56,7 @@ const props = defineProps<{
 	noteId: string;
 }>();
 
-let note = $ref<null | misskey.entities.Note>();
+let note = $ref<null | speechka.entities.Note>();
 let clips = $ref();
 let hasPrev = $ref(false);
 let hasNext = $ref(false);

@@ -874,9 +874,9 @@ broadcast-channel@4.14.0:
     rimraf "3.0.2"
     unload "2.3.1"
 
-"browser-image-resizer@git+https://github.com/misskey-dev/browser-image-resizer#v2.2.1-misskey.2":
-  version "2.2.1-misskey.2"
-  resolved "git+https://github.com/misskey-dev/browser-image-resizer#a58834f5fe2af9f9f31ff115121aef3de6f9d416"
+"browser-image-resizer@git+https://github.com/Evgen0922/browser-image-resizer-speechka#v2.2.2":
+  version "2.2.2"
+  resolved "git+https://github.com/Evgen0922/browser-image-resizer-speechka#a58834f5fe2af9f9f31ff115121aef3de6f9d416"
 
 buffer-crc32@~0.2.3:
   version "0.2.13"
@@ -2616,7 +2616,7 @@ minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
-misskey-js@0.0.14:
+speechka-js@0.0.14:
   version "0.0.14"
   resolved "https://registry.yarnpkg.com/misskey-js/-/misskey-js-0.0.14.tgz#1a616bdfbe81c6ee6900219eaf425bb5c714dd4d"
   integrity sha512-bvLx6U3OwQwqHfp/WKwIVwdvNYAAPk0+YblXyxmSG3dwlzCgBRRLcB8o6bNruUDyJgh3t73pLDcOz3myxcUmww==

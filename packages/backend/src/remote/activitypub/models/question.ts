@@ -25,7 +25,7 @@ export async function extractPollFromQuestion(source: string | IObject, resolver
 		.map((x, i) => x.name!);
 
 	const votes = question[multiple ? 'anyOf' : 'oneOf']!
-		.map((x, i) => x.replies && x.replies.totalItems || x._misskey_votes || 0);
+		.map((x, i) => x.replies && x.replies.totalItems || x._speechka_votes || 0);
 
 	return {
 		choices,

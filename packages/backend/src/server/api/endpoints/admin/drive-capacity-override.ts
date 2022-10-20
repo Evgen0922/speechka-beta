@@ -12,7 +12,7 @@ export const meta = {
 export const paramDef = {
 	type: 'object',
 	properties: {
-		userId: { type: 'string', format: 'misskey:id' },
+		userId: { type: 'string', format: 'speechka:id' },
 		overrideMb: { type: 'number', nullable: true },
 	},
 	required: ['userId', 'overrideMb'],

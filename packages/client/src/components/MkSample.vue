@@ -8,8 +8,8 @@
 			<span>Переключатель {{ flag ? 'on' : 'off' }}</span>
 		</MkSwitch>
 		<div style="margin: 32px 0;">
-			<MkRadio v-model="radio" value="misskey">Выбор 1</MkRadio>
-			<MkRadio v-model="radio" value="mastodon">Выбор 2</MkRadio>
+			<MkRadio v-model="radio" value="speechka">Выбор 1</MkRadio>
+			<MkRadio v-model="radio" value="speechka">Выбор 2</MkRadio>
 			<!-- <MkRadio v-model="radio" value="pleroma">Pleroma</MkRadio> -->
 		</div>
 		<MkButton inline>Это</MkButton>
@@ -50,7 +50,7 @@ export default defineComponent({
 		return {
 			text: '',
 			flag: true,
-			radio: 'misskey',
+			radio: 'speechka',
 			mfm: `Привет мир! Это тестовый аккаунт @example. А это твой аккаунт: @${this.$i ? this.$i.username : 'guest'}.\n А вот так выглядит ${config.url}[ссылка](${config.url}).`
 		};
 	},
@@ -78,7 +78,7 @@ export default defineComponent({
 				},
 				baz: {
 					type: 'string',
-					default: 'Misskey makes you happy.',
+					default: 'Speechka makes you happy.',
 					label: 'This is a string property'
 				},
 			});

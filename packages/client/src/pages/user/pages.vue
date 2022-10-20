@@ -8,12 +8,12 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import MkPagePreview from '@/components/MkPagePreview.vue';
 import MkPagination from '@/components/MkPagination.vue';
 
 const props = defineProps<{
-	user: misskey.entities.User;
+	user: speechka.entities.User;
 }>();
 
 const pagination = {

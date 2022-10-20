@@ -15,7 +15,7 @@ export const paramDef = {
 	type: 'object',
 	properties: {
 		ids: { type: 'array', items: {
-			type: 'string', format: 'misskey:id',
+			type: 'string', format: 'speechka:id',
 		} },
 		aliases: { type: 'array', items: {
 			type: 'string',

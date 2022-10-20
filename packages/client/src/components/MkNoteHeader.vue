@@ -16,13 +16,13 @@
 
 <script lang="ts" setup>
 import { } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import MkVisibility from '@/components/MkVisibility.vue';
 import { notePage } from '@/filters/note';
 import { userPage } from '@/filters/user';
 
 defineProps<{
-	note: misskey.entities.Note;
+	note: speechka.entities.Note;
 	pinned?: boolean;
 }>();
 </script>

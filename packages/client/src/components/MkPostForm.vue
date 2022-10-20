@@ -65,11 +65,11 @@
 <script lang="ts" setup>
 import { inject, watch, nextTick, onMounted, defineAsyncComponent } from 'vue';
 import * as mfm from 'mfm-js';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import insertTextAtCursor from 'insert-text-at-cursor';
 import { length } from 'stringz';
 import { toASCII } from 'punycode/';
-import * as Acct from 'misskey-js/built/acct';
+import * as Acct from 'speechka-js/built/acct';
 import { throttle } from 'throttle-debounce';
 import XNoteSimple from '@/components/MkNoteSimple.vue';
 import XNotePreview from '@/components/MkNotePreview.vue';
@@ -93,17 +93,17 @@ import { uploadFile } from '@/scripts/upload';
 const modal = inject('modal');
 
 const props = withDefaults(defineProps<{
-	reply?: misskey.entities.Note;
-	renote?: misskey.entities.Note;
-	channel?: any; // TODO
-	mention?: misskey.entities.User;
-	specified?: misskey.entities.User;
+	reply?: speechka.entities.Note;
+	renote?: speechka.entities.Note;
+	channel?: any;
+	mention?: speechka.entities.User;
+	specified?: speechka.entities.User;
 	initialText?: string;
-	initialVisibility?: typeof misskey.noteVisibilities;
-	initialFiles?: misskey.entities.DriveFile[];
+	initialVisibility?: typeof speechka.noteVisibilities;
+	initialFiles?: speechka.entities.DriveFile[];
 	initialLocalOnly?: boolean;
-	initialVisibleUsers?: misskey.entities.User[];
-	initialNote?: misskey.entities.Note;
+	initialVisibleUsers?: speechka.entities.User[];
+	initialNote?: speechka.entities.Note;
 	instant?: boolean;
 	fixed?: boolean;
 	autofocus?: boolean;
@@ -136,7 +136,7 @@ let useCw = $ref(false);
 let showPreview = $ref(false);
 let cw = $ref<string | null>(null);
 let localOnly = $ref<boolean>(props.initialLocalOnly ?? defaultStore.state.rememberNoteVisibility ? defaultStore.state.localOnly : defaultStore.state.defaultNoteLocalOnly);
-let visibility = $ref(props.initialVisibility ?? (defaultStore.state.rememberNoteVisibility ? defaultStore.state.visibility : defaultStore.state.defaultNoteVisibility) as typeof misskey.noteVisibilities[number]);
+let visibility = $ref(props.initialVisibility ?? (defaultStore.state.rememberNoteVisibility ? defaultStore.state.visibility : defaultStore.state.defaultNoteVisibility) as typeof speechka.noteVisibilities[number]);
 let visibleUsers = $ref([]);
 if (props.initialVisibleUsers) {
 	props.initialVisibleUsers.forEach(pushVisibleUser);
@@ -635,7 +635,7 @@ function showActions(ev) {
 	})), ev.currentTarget ?? ev.target);
 }
 
-let postAccount = $ref<misskey.entities.UserDetailed | null>(null);
+let postAccount = $ref<speechka.entities.UserDetailed | null>(null);
 
 function openAccountMenu(ev: MouseEvent) {
 	openAccountMenu_({

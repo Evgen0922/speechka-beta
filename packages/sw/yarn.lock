@@ -540,7 +540,7 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
-misskey-js@0.0.14:
+speechka-js@0.0.14:
   version "0.0.14"
   resolved "https://registry.yarnpkg.com/misskey-js/-/misskey-js-0.0.14.tgz#1a616bdfbe81c6ee6900219eaf425bb5c714dd4d"
   integrity sha512-bvLx6U3OwQwqHfp/WKwIVwdvNYAAPk0+YblXyxmSG3dwlzCgBRRLcB8o6bNruUDyJgh3t73pLDcOz3myxcUmww==

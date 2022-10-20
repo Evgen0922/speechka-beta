@@ -27,7 +27,7 @@
 
 <script lang="ts" setup>
 import { nextTick, onMounted } from 'vue';
-import * as misskey from 'misskey-js';
+import * as speechka from 'speechka-js';
 import Cropper from 'cropperjs';
 import tinycolor from 'tinycolor2';
 import XModalWindow from '@/components/MkModalWindow.vue';
@@ -39,13 +39,13 @@ import { query } from '@/scripts/url';
 import { i18n } from '@/i18n';
 
 const emit = defineEmits<{
-	(ev: 'ok', cropped: misskey.entities.DriveFile): void;
+	(ev: 'ok', cropped: speechka.entities.DriveFile): void;
 	(ev: 'cancel'): void;
 	(ev: 'closed'): void;
 }>();
 
 const props = defineProps<{
-	file: misskey.entities.DriveFile;
+	file: speechka.entities.DriveFile;
 	aspectRatio: number;
 }>();
 
@@ -58,7 +58,7 @@ let cropper: Cropper | null = null;
 let loading = $ref(true);
 
 const ok = async () => {
-	const promise = new Promise<misskey.entities.DriveFile>(async (res) => {
+	const promise = new Promise<speechka.entities.DriveFile>(async (res) => {
 		const croppedCanvas = await cropper?.getCropperSelection()?.$toCanvas();
 		croppedCanvas.toBlob(blob => {
 			const formData = new FormData();

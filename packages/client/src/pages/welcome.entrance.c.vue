@@ -11,7 +11,7 @@
 			<MkEmoji :normal="true" :no-style="true" emoji="🍮"/>
 		</div>
 		<div class="main">
-			<img src="/client-assets/misskey.svg" class="misskey"/>
+			<img src="/client-assets/speechka.svg" class="speechka"/>
 			<div class="form _panel">
 				<div class="bg">
 					<div class="fade"></div>
@@ -22,7 +22,7 @@
 					</h1>
 					<div class="about">
 						<!-- eslint-disable-next-line vue/no-v-html -->
-						<div class="desc" v-html="meta.description || $ts.headlineMisskey"></div>
+						<div class="desc" v-html="meta.description || $ts.headlineSpeechka"></div>
 					</div>
 					<div class="action">
 						<MkButton inline gradate @click="signup()">{{ $ts.signup }}</MkButton>
@@ -129,7 +129,7 @@ export default defineComponent({
 					os.pageWindow('/about');
 				}
 			}, {
-				text: this.$ts.aboutMisskey,
+				text: this.$ts.aboutSpeechka,
 				icon: 'fas fa-info-circle',
 				action: () => {
 					os.pageWindow('/about-speechka');
@@ -193,7 +193,7 @@ export default defineComponent({
 			width: min(460px, 100%);
 			margin: auto;
 
-			> .misskey {
+			> .speechka {
 				width: 150px;
 				margin-bottom: 16px;
 

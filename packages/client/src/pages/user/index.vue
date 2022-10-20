@@ -20,8 +20,8 @@
 <script lang="ts" setup>
 import { defineAsyncComponent, computed, inject, onMounted, onUnmounted, watch } from 'vue';
 import calcAge from 's-age';
-import * as Acct from 'misskey-js/built/acct';
-import * as misskey from 'misskey-js';
+import * as Acct from 'speechka-js/built/acct';
+import * as speechka from 'speechka-js';
 import { getScrollPosition } from '@/scripts/scroll';
 import number from '@/filters/number';
 import { userPage, acct as getAcct } from '@/filters/user';
@@ -47,7 +47,7 @@ const props = withDefaults(defineProps<{
 const router = useRouter();
 
 let tab = $ref(props.page);
-let user = $ref<null | misskey.entities.UserDetailed>(null);
+let user = $ref<null | speechka.entities.UserDetailed>(null);
 let error = $ref(null);
 
 function fetchUser(): void {

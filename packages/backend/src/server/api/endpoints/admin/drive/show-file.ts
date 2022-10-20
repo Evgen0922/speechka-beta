@@ -155,7 +155,7 @@ export const paramDef = {
 	anyOf: [
 		{
 			properties: {
-				fileId: { type: 'string', format: 'misskey:id' },
+				fileId: { type: 'string', format: 'speechka:id' },
 			},
 			required: ['fileId'],
 		},
