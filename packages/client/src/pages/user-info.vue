@@ -94,7 +94,7 @@
 					<FormButton v-if="$i.isAdmin" inline danger @click="deleteAccount">{{ i18n.ts.deleteAccount }}</FormButton>
 				</div>
 				<FormTextarea v-model="moderationNote" manual-save class="_formBlock">
-					<template #label>Moderation note</template>
+					<template #label>Заметка администратора</template>
 				</FormTextarea>
 				<FormFolder class="_formBlock">
 					<template #label>IP</template>
@@ -113,7 +113,7 @@
 					<MkFileListForAdmin :pagination="filesPagination" view-mode="grid"/>
 				</FormFolder>
 				<FormSection>
-					<template #label>Drive Capacity Override</template>
+					<template #label>Лимит диского пространсва</template>
 
 					<FormInput v-if="user.host == null" v-model="driveCapacityOverrideMb" inline :manual-save="true" type="number" :placeholder="i18n.t('defaultValueIs', { value: instance.driveCapacityPerLocalUserMb })" @update:model-value="applyDriveCapacityOverride">
 						<template #label>{{ i18n.ts.driveCapOverrideLabel }}</template>

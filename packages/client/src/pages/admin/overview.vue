@@ -3,17 +3,17 @@
 	<div ref="rootEl" v-size="{ max: [740] }" class="edbbcaef">
 		<div class="left">
 			<div v-if="stats" class="container stats">
-				<div class="title">Stats</div>
+				<div class="title">Статистика</div>
 				<div class="body">
 					<div class="number _panel">
-						<div class="label">Users</div>
+						<div class="label">Пользователи</div>
 						<div class="value _monospace">
 							{{ number(stats.originalUsersCount) }}
 							<MkNumberDiff v-if="usersComparedToThePrevDay != null" v-tooltip="i18n.ts.dayOverDayChanges" class="diff" :value="usersComparedToThePrevDay"><template #before>(</template><template #after>)</template></MkNumberDiff>
 						</div>
 					</div>
 					<div class="number _panel">
-						<div class="label">Notes</div>
+						<div class="label">Заметки</div>
 						<div class="value _monospace">
 							{{ number(stats.originalNotesCount) }}
 							<MkNumberDiff v-if="notesComparedToThePrevDay != null" v-tooltip="i18n.ts.dayOverDayChanges" class="diff" :value="notesComparedToThePrevDay"><template #before>(</template><template #after>)</template></MkNumberDiff>
@@ -37,7 +37,7 @@
 			</div>
 
 			<div class="container users">
-				<div class="title">New users</div>
+				<div class="title">Новые пользователи</div>
 				<div v-if="newUsers" class="body">
 					<XUser v-for="user in newUsers" :key="user.id" class="user" :user="user"/>
 				</div>
@@ -78,7 +78,7 @@
 		</div>
 		<div class="right">
 			<div class="container charts">
-				<div class="title">Active users</div>
+				<div class="title">Активные пользователи</div>
 				<div class="body">
 					<canvas ref="chartEl"></canvas>
 				</div>

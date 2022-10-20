@@ -130,7 +130,7 @@
 					</FormSection>
 
 					<FormSection>
-						<template #label>DeepL Translation</template>
+						<template #label>Ключ доступа</template>
 
 						<FormInput v-model="deeplAuthKey" class="_formBlock">
 							<template #prefix><i class="fas fa-key"></i></template>

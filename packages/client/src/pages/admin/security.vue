@@ -42,12 +42,12 @@
 							<template #caption>{{ i18n.ts._sensitiveMediaDetection.analyzeVideosDescription }}</template>
 						</FormSwitch>
 
-						<FormSwitch v-model="setSensitiveFlagAutomatically" class="_formBlock">
+						<!-- <FormSwitch v-model="setSensitiveFlagAutomatically" class="_formBlock">
 							<template #label>{{ i18n.ts._sensitiveMediaDetection.setSensitiveFlagAutomatically }} ({{ i18n.ts.notRecommended }})</template>
 							<template #caption>{{ i18n.ts._sensitiveMediaDetection.setSensitiveFlagAutomaticallyDescription }}</template>
-						</FormSwitch>
+						</FormSwitch> -->
 
-						<!-- 現状 false positive が多すぎて実用に耐えない
+						<!-- false positive 
 						<FormSwitch v-model="disallowUploadWhenPredictedAsPorn" class="_formBlock">
 							<template #label>{{ i18n.ts._sensitiveMediaDetection.disallowUploadWhenPredictedAsPorn }}</template>
 						</FormSwitch>
@@ -58,26 +58,26 @@
 				</FormFolder>
 
 				<FormFolder class="_formBlock">
-					<template #label>Active Email Validation</template>
-					<template v-if="enableActiveEmailValidation" #suffix>Enabled</template>
-					<template v-else #suffix>Disabled</template>
+					<template #label>Активация по почте</template>
+					<template v-if="enableActiveEmailValidation" #suffix>EВключено</template>
+					<template v-else #suffix>Отключено</template>
 
 					<div class="_formRoot">
 						<span class="_formBlock">{{ i18n.ts.activeEmailValidationDescription }}</span>
 						<FormSwitch v-model="enableActiveEmailValidation" class="_formBlock" @update:modelValue="save">
-							<template #label>Enable</template>
+							<template #label>Включено</template>
 						</FormSwitch>
 					</div>
 				</FormFolder>
 
 				<FormFolder class="_formBlock">
-					<template #label>Log IP address</template>
+					<template #label>Записывать логи IP</template>
 					<template v-if="enableIpLogging" #suffix>Enabled</template>
-					<template v-else #suffix>Disabled</template>
+					<template v-else #suffix>Отключено</template>
 
 					<div class="_formRoot">
 						<FormSwitch v-model="enableIpLogging" class="_formBlock" @update:modelValue="save">
-							<template #label>Enable</template>
+							<template #label>Включено</template>
 						</FormSwitch>
 					</div>
 				</FormFolder>

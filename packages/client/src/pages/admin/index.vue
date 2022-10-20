@@ -159,12 +159,14 @@ const menuDef = $computed(() => [{
 		text: i18n.ts.integration,
 		to: '/admin/integrations',
 		active: currentPage?.route.name === 'integrations',
-	}, {
-		icon: 'fas fa-ban',
-		text: i18n.ts.instanceBlocking,
-		to: '/admin/instance-block',
-		active: currentPage?.route.name === 'instance-block',
-	}, {
+	}, 
+	// {
+	// 	icon: 'fas fa-ban',
+	// 	text: i18n.ts.instanceBlocking,
+	// 	to: '/admin/instance-block',
+	// 	active: currentPage?.route.name === 'instance-block',
+	// },
+	 {
 		icon: 'fas fa-ghost',
 		text: i18n.ts.proxyAccount,
 		to: '/admin/proxy-account',

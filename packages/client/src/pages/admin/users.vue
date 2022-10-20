@@ -22,22 +22,22 @@
 							<option value="silenced">{{ i18n.ts.silence }}</option>
 							<option value="suspended">{{ i18n.ts.suspend }}</option>
 						</MkSelect>
-						<MkSelect v-model="origin" style="flex: 1;">
+						<!-- <MkSelect v-model="origin" style="flex: 1;">
 							<template #label>{{ i18n.ts.instance }}</template>
 							<option value="combined">{{ i18n.ts.all }}</option>
 							<option value="local">{{ i18n.ts.local }}</option>
 							<option value="remote">{{ i18n.ts.remote }}</option>
-						</MkSelect>
+						</MkSelect> -->
 					</div>
 					<div class="inputs">
 						<MkInput v-model="searchUsername" style="flex: 1;" type="text" :spellcheck="false" @update:modelValue="$refs.users.reload()">
 							<template #prefix>@</template>
 							<template #label>{{ i18n.ts.username }}</template>
 						</MkInput>
-						<MkInput v-model="searchHost" style="flex: 1;" type="text" :spellcheck="false" :disabled="pagination.params.origin === 'local'" @update:modelValue="$refs.users.reload()">
+						<!-- <MkInput v-model="searchHost" style="flex: 1;" type="text" :spellcheck="false" :disabled="pagination.params.origin === 'local'" @update:modelValue="$refs.users.reload()">
 							<template #prefix>@</template>
 							<template #label>{{ i18n.ts.host }}</template>
-						</MkInput>
+						</MkInput> -->
 					</div>
 
 					<MkPagination v-slot="{items}" ref="paginationComponent" :pagination="pagination" class="users">
