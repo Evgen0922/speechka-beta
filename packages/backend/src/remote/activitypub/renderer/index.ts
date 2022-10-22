@@ -32,7 +32,7 @@ export const renderActivity = (x: any): IActivity | null => {
 				PropertyValue: 'schema:PropertyValue',
 				value: 'schema:value',
 				
-				speechka: 'https://github.com/Evgen0922/speechka_develop',
+				speechka: 'https://github.com/Evgen0922/speechka-dev',
 				'_speechka_content': 'speechka:_speechka_content',
 				'_speechka_quote': 'speechka:_speechka_quote',
 				'_speechka_reaction': 'speechka:_speechka_reaction',

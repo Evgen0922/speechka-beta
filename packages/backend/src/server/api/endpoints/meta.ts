@@ -57,12 +57,12 @@ export const meta = {
 			repositoryUrl: {
 				type: 'string',
 				optional: false, nullable: false,
-				default: 'https://github.com/Evgen0922/speechka_develop',
+				default: 'https://github.com/Evgen0922/speechka-dev',
 			},
 			feedbackUrl: {
 				type: 'string',
 				optional: false, nullable: false,
-				default: 'https://github.com/Evgen0922/speechka_develop/issues/new',
+				default: 'https://github.com/Evgen0922/speechka-dev/issues/new',
 			},
 			defaultDarkTheme: {
 				type: 'string',
