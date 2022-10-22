@@ -77,12 +77,12 @@
 		<option value="always">{{ i18n.ts._instanceTicker.always }}</option>
 	</FormSelect> -->
 
-	<FormSelect v-model="nsfw" class="_formBlock">
+	<!-- <FormSelect v-model="nsfw" class="_formBlock">
 		<template #label>{{ i18n.ts.nsfw }}</template>
 		<option value="respect">{{ i18n.ts._nsfw.respect }}</option>
 		<option value="ignore">{{ i18n.ts._nsfw.ignore }}</option>
 		<option value="force">{{ i18n.ts._nsfw.force }}</option>
-	</FormSelect>
+	</FormSelect> -->
 
 	<!-- Убран ползунок нагрузки на сервер -->
 	<!-- <FormRange v-model="numberOfPageCache" :min="1" :max="10" :step="1" easing class="_formBlock">

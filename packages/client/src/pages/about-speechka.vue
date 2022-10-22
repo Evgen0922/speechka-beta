@@ -24,11 +24,12 @@
 							{{ i18n.ts._aboutSpeechka.source }}
 							<template #suffix>GitHub</template>
 						</FormLink>
-						<FormLink to="https://ko-fi.com/kevgen" external>
+						<!-- TODO: Удалена кнопка пожертвований -->
+						<!-- <FormLink to="https://ko-fi.com/kevgen" external>
 							<template #icon><i class="fas fa-hand-holding-medical"></i></template>
 							{{ i18n.ts._aboutSpeechka.donate }}
 							<template #suffix>Ko-Fi</template>
-						</FormLink>
+						</FormLink> -->
 					</div>
 				</FormSection>
 				<FormSection>
