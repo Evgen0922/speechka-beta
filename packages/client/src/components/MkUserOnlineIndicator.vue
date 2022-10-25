@@ -27,8 +27,11 @@ const text = $computed(() => {
 	border-radius: 120%; 
 
 	&.online {
-		background: #58d4c9;
+		background: #00e538;
 	}
+	// &.online {
+	// 	background: #58d4c9;
+	// }
 
 	&.active {
 		background: #e4bc48;

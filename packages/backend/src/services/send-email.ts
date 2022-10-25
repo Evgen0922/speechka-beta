@@ -51,7 +51,8 @@ export async function sendEmail(to: string, subject: string, html: string, text:
 
 			a {
 				text-decoration: none;
-				color: #86b300;
+				color: #606df7;
+				// color: #86b300;
 			}
 			a:hover {
 				text-decoration: underline;
@@ -65,7 +66,8 @@ export async function sendEmail(to: string, subject: string, html: string, text:
 			}
 				main > header {
 					padding: 32px;
-					background: #86b300;
+					background: #606df7;
+					// background: #86b300;
 				}
 					main > header > img {
 						max-width: 128px;

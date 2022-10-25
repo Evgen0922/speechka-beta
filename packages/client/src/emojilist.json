@@ -1267,7 +1267,6 @@
 	{ "category": "symbols", "char": "🔯", "name": "six_pointed_star", "keywords": ["purple-square", "religion", "jewish", "hexagram"] },
 	{ "category": "symbols", "char": "🕎", "name": "menorah", "keywords": ["hanukkah", "candles", "jewish"] },
 	{ "category": "symbols", "char": "☯", "name": "yin_yang", "keywords": ["balance"] },
-	{ "category": "symbols", "char": "☦", "name": "orthodox_cross", "keywords": ["suppedaneum", "religion"] },
 	{ "category": "symbols", "char": "🛐", "name": "place_of_worship", "keywords": ["religion", "church", "temple", "prayer"] },
 	{ "category": "symbols", "char": "⛎", "name": "ophiuchus", "keywords": ["sign", "purple-square", "constellation", "astrology"] },
 	{ "category": "symbols", "char": "♈", "name": "aries", "keywords": ["sign", "purple-square", "zodiac", "astrology"] },

@@ -1305,7 +1305,7 @@ _profile:
   metadataLabel: "Метка"
   metadataContent: "Содержимое"
   changeAvatar: "Поменять аватар"
-  changeBanner: "Поменять изображение в шапке"
+  changeBanner: "Поменять шапку"
 _exportOrImport:
   allNotes: "Все записи\n"
   followingList: "Подписки"

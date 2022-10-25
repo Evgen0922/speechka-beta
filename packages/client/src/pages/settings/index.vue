@@ -195,7 +195,8 @@ onUnmounted(() => {
 	ro.disconnect();
 });
 
-const emailNotConfigured = computed(() => instance.enableEmail && ($i.email == null || !$i.emailVerified));
+const emailNotConfigured = computed(() => instance.enableEmail && ($i.email == null));
+// const emailNotConfigured = computed(() => instance.enableEmail && ($i.email == null || !$i.emailVerified));
 
 provideMetadataReceiver((info) => {
 	if (info == null) {

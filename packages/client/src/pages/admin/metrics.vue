@@ -188,8 +188,10 @@ export default defineComponent({
 						pointRadius: 0,
 						tension: 0,
 						borderWidth: 2,
-						borderColor: '#86b300',
-						backgroundColor: alpha('#86b300', 0.1),
+						borderColor: '#606df7',
+						backgroundColor: alpha('#606df7', 0.1),
+						// borderColor: '#86b300',
+						// backgroundColor: alpha('#86b300', 0.1),
 						data: []
 					}, {
 						label: 'MEM (active)',

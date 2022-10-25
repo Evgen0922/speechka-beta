@@ -99,27 +99,27 @@
 	<FormSection>
 		<template #label>{{ i18n.ts.other }}</template>
 		<MkKeyValue oneline style="margin: 1em 0;">
-			<template #key>emailVerified</template>
+			<template #key>Почта подтверждена:</template>
 			<template #value>{{ $i.emailVerified ? i18n.ts.yes : i18n.ts.no }}</template>
 		</MkKeyValue>
 		<MkKeyValue oneline style="margin: 1em 0;">
-			<template #key>twoFactorEnabled</template>
+			<template #key>Двухфакторная аутентификация:</template>
 			<template #value>{{ $i.twoFactorEnabled ? i18n.ts.yes : i18n.ts.no }}</template>
 		</MkKeyValue>
 		<MkKeyValue oneline style="margin: 1em 0;">
-			<template #key>securityKeys</template>
+			<template #key>Защитный ключ:</template>
 			<template #value>{{ $i.securityKeys ? i18n.ts.yes : i18n.ts.no }}</template>
 		</MkKeyValue>
-		<MkKeyValue oneline style="margin: 1em 0;">
+		<!-- <MkKeyValue oneline style="margin: 1em 0;">
 			<template #key>usePasswordLessLogin</template>
 			<template #value>{{ $i.usePasswordLessLogin ? i18n.ts.yes : i18n.ts.no }}</template>
-		</MkKeyValue>
+		</MkKeyValue> -->
 		<MkKeyValue oneline style="margin: 1em 0;">
-			<template #key>isModerator</template>
+			<template #key>Модератор:</template>
 			<template #value>{{ $i.isModerator ? i18n.ts.yes : i18n.ts.no }}</template>
 		</MkKeyValue>
 		<MkKeyValue oneline style="margin: 1em 0;">
-			<template #key>isAdmin</template>
+			<template #key>Администратор:</template>
 			<template #value>{{ $i.isAdmin ? i18n.ts.yes : i18n.ts.no }}</template>
 		</MkKeyValue>
 	</FormSection>

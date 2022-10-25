@@ -1,7 +1,7 @@
 <template>
 <div class="_formRoot">
 	<FormInfo warn class="_formBlock">{{ i18n.ts._accountDelete.mayTakeTime }}</FormInfo>
-	<FormInfo class="_formBlock">{{ i18n.ts._accountDelete.sendEmail }}</FormInfo>
+	<!-- <FormInfo class="_formBlock">{{ i18n.ts._accountDelete.sendEmail }}</FormInfo> -->
 	<FormButton v-if="!$i.isDeleted" danger class="_formBlock" @click="deleteAccount">{{ i18n.ts._accountDelete.requestAccountDelete }}</FormButton>
 	<FormButton v-else disabled>{{ i18n.ts._accountDelete.inProgress }}</FormButton>
 </div>
