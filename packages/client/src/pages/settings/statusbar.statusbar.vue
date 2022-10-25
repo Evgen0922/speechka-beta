@@ -2,7 +2,7 @@
 <div class="_formRoot">
 	<FormSelect v-model="statusbar.type" placeholder="Please select" class="_formBlock">
 		<template #label>{{ i18n.ts.type }}</template>
-		<option value="rss">RSS</option>
+		<option value="rss">Новости</option>
 		<option value="federation">Federation</option>
 		<option value="userList">User list timeline</option>
 	</FormSelect>
