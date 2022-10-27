@@ -19,8 +19,8 @@
 						<div><MkTime :time="token.createdAt"/></div>
 					</div>
 					<div class="_keyValue">
-						<div>{{ i18n.ts.lastUsedDate }}:</div>
-						<div><MkTime :time="token.lastUsedAt"/></div>
+					     <div>{{ i18n.ts.lastUsedDate }}:</div>
+						 <div><MkTime :time="token.lastUsedAt"/></div>
 					</div>
 					<div class="actions">
 						<button class="_button" @click="revoke(token)"><i class="fas fa-trash-alt"></i></button>

@@ -7,14 +7,13 @@ import { IsNull } from 'typeorm';
 
 const legacies: Record<string, string> = {
 	'like':     '👍',
-	'love':     '❤', // ここに記述する場合は異体字セレクタを入れない
+	'love':     '❤', 
 	'laugh':    '😆',
 	'hmm':      '🤔',
 	'surprise': '😮',
 	'congrats': '🎉',
 	'angry':    '💢',
 	'confused': '😥',
-	'rip':      '😇',
 	'pudding':  '🍮',
 	'star':     '⭐',
 };
