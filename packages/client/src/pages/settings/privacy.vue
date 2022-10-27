@@ -44,7 +44,6 @@
 				<option value="followers">{{ i18n.ts._visibility.followers }}</option>
 				<option value="specified">{{ i18n.ts._visibility.specified }}</option>
 			</FormSelect>
-			<FormSwitch v-model="defaultNoteLocalOnly" class="_formBlock">{{ i18n.ts._visibility.localOnly }}</FormSwitch>
 		</FormFolder>
 	</FormSection>
 
