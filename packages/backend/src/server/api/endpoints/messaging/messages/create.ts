@@ -21,43 +21,43 @@ export const meta = {
 
 	errors: {
 		recipientIsYourself: {
-			message: 'You can not send a message to yourself.',
+			message: 'Вы не можете отправить сообщение самому себе)',
 			code: 'RECIPIENT_IS_YOURSELF',
 			id: '17e2ba79-e22a-4cbc-bf91-d327643f4a7e',
 		},
 
 		noSuchUser: {
-			message: 'No such user.',
+			message: 'Нет такого пользователя.',
 			code: 'NO_SUCH_USER',
 			id: '11795c64-40ea-4198-b06e-3c873ed9039d',
 		},
 
 		noSuchGroup: {
-			message: 'No such group.',
+			message: 'Нет такой группы.',
 			code: 'NO_SUCH_GROUP',
 			id: 'c94e2a5d-06aa-4914-8fa6-6a42e73d6537',
 		},
 
 		groupAccessDenied: {
-			message: 'You can not send messages to groups that you have not joined.',
+			message: 'Вы не можете отправлять сообщения группам, к которым вы еще не присоединились.',
 			code: 'GROUP_ACCESS_DENIED',
 			id: 'd96b3cca-5ad1-438b-ad8b-02f931308fbd',
 		},
 
 		noSuchFile: {
-			message: 'No such file.',
+			message: 'Нет такого файла.',
 			code: 'NO_SUCH_FILE',
 			id: '4372b8e2-185d-4146-8749-2f68864a3e5f',
 		},
 
 		contentRequired: {
-			message: 'Content required. You need to set text or fileId.',
+			message: 'Требуемый контент. Вам нужно установить ID текста или файла.',
 			code: 'CONTENT_REQUIRED',
 			id: '25587321-b0e6-449c-9239-f8925092942c',
 		},
 
 		youHaveBeenBlocked: {
-			message: 'You cannot send a message because you have been blocked by this user.',
+			message: 'Вы не можете отправить сообщение, потому что Вы были заблокированы этим пользователем.',
 			code: 'YOU_HAVE_BEEN_BLOCKED',
 			id: 'c15a5199-7422-4968-941a-2a462c478f7d',
 		},

@@ -8,7 +8,7 @@
 	base: 'dark',
 
 	props: {
-		bg: '#232323',
+		bg: '#191919',
 		fg: 'rgb(199, 209, 216)',
 		fgHighlighted: '#fff',
 		divider: 'rgba(255, 255, 255, 0.14)',

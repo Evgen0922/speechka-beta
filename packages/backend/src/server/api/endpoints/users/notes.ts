@@ -25,7 +25,7 @@ export const meta = {
 
 	errors: {
 		noSuchUser: {
-			message: 'No such user.',
+			message: 'Нет такого пользователя.',
 			code: 'NO_SUCH_USER',
 			id: '27e494ba-2ac2-48e8-893b-10d4d8c2387b',
 		},

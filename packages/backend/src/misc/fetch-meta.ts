@@ -7,7 +7,7 @@ export async function fetchMeta(noCache = false): Promise<Meta> {
 	if (!noCache && cache) return cache;
 
 	return await db.transaction(async transactionalEntityManager => {
-		// 過去のバグでレコードが複数出来てしまっている可能性があるので新しいIDを優先する
+		
 		const metas = await transactionalEntityManager.find(Meta, {
 			order: {
 				id: 'DESC',
@@ -20,7 +20,7 @@ export async function fetchMeta(noCache = false): Promise<Meta> {
 			cache = meta;
 			return meta;
 		} else {
-			// metaが空のときfetchMetaが同時に呼ばれるとここが同時に呼ばれてしまうことがあるのでフェイルセーフなupsertを使う
+			
 			const saved = await transactionalEntityManager
 				.upsert(
 					Meta,

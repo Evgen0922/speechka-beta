@@ -60,13 +60,13 @@ class NotificationManager {
 	}
 
 	public push(notifiee: ILocalUser['id'], reason: NotificationType) {
-		// 自分自身へは通知しない
+		
 		if (this.notifier.id === notifiee) return;
 
 		const exist = this.queue.find(x => x.target === notifiee);
 
 		if (exist) {
-			// 「メンションされているかつ返信されている」場合は、メンションとしての通知ではなく返信としての通知にする
+			
 			if (reason !== 'mention') {
 				exist.reason = reason;
 			}
@@ -80,14 +80,14 @@ class NotificationManager {
 
 	public async deliver() {
 		for (const x of this.queue) {
-			// ミュート情報を取得
+			
 			const mentioneeMutes = await Mutings.findBy({
 				muterId: x.target,
 			});
 
 			const mentioneesMutedUserIds = mentioneeMutes.map(m => m.muteeId);
 
-			// 通知される側のユーザーが通知する側のユーザーをミュートしていない限りは通知する
+			
 			if (!mentioneesMutedUserIds.includes(this.notifier.id)) {
 				createNotification(x.target, x.reason, {
 					notifierId: this.notifier.id,
@@ -127,8 +127,7 @@ type Option = {
 };
 
 export default async (user: { id: User['id']; username: User['username']; host: User['host']; isSilenced: User['isSilenced']; createdAt: User['createdAt']; }, data: Option, silent = false) => new Promise<Note>(async (res, rej) => {
-	// チャンネル外にリプライしたら対象のスコープに合わせる
-	// (クライアントサイドでやっても良い処理だと思うけどとりあえずサーバーサイドで)
+
 	if (data.reply && data.channel && data.reply.channelId !== data.channel.id) {
 		if (data.reply.channelId) {
 			data.channel = await Channels.findOneBy({ id: data.reply.channelId });
@@ -137,8 +136,6 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 		}
 	}
 
-	// チャンネル内にリプライしたら対象のスコープに合わせる
-	// (クライアントサイドでやっても良い処理だと思うけどとりあえずサーバーサイドで)
 	if (data.reply && (data.channel == null) && data.reply.channelId) {
 		data.channel = await Channels.findOneBy({ id: data.reply.channelId });
 	}
@@ -150,37 +147,37 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 	if (data.channel != null) data.visibleUsers = [];
 	if (data.channel != null) data.localOnly = true;
 
-	// サイレンス
+	
 	if (user.isSilenced && data.visibility === 'public' && data.channel == null) {
 		data.visibility = 'home';
 	}
 
-	// Renote対象が「ホームまたは全体」以外の公開範囲ならreject
+	
 	if (data.renote && data.renote.visibility !== 'public' && data.renote.visibility !== 'home' && data.renote.userId !== user.id) {
 		return rej('Renote target is not public or home');
 	}
 
-	// Renote対象がpublicではないならhomeにする
+	
 	if (data.renote && data.renote.visibility !== 'public' && data.visibility === 'public') {
 		data.visibility = 'home';
 	}
 
-	// Renote対象がfollowersならfollowersにする
+	
 	if (data.renote && data.renote.visibility === 'followers') {
 		data.visibility = 'followers';
 	}
 
-	// 返信対象がpublicではないならhomeにする
+	
 	if (data.reply && data.reply.visibility !== 'public' && data.visibility === 'public') {
 		data.visibility = 'home';
 	}
 
-	// ローカルのみをRenoteしたらローカルのみにする
+	
 	if (data.renote && data.renote.localOnly && data.channel == null) {
 		data.localOnly = true;
 	}
 
-	// ローカルのみにリプライしたらローカルのみにする
+	
 	if (data.reply && data.reply.localOnly && data.channel == null) {
 		data.localOnly = true;
 	}
@@ -236,7 +233,7 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 
 	res(note);
 
-	// 統計を更新
+	
 	notesChart.update(note, true);
 	perUserNotesChart.update(user, note, true);
 
@@ -248,7 +245,7 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 		});
 	}
 
-	// ハッシュタグ更新
+	
 	if (data.visibility === 'public' || data.visibility === 'home') {
 		updateHashtags(user, tags);
 	}
@@ -302,7 +299,7 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 		saveReply(data.reply, note);
 	}
 
-	// この投稿を除く指定したユーザーによる指定したノートのリノートが存在しないとき
+	
 	if (data.renote && (await countSameRenotes(user.id, data.renote.id, note.id) === 0)) {
 		incRenoteCount(data.renote);
 	}
@@ -320,12 +317,12 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 	if (!silent) {
 		if (Users.isLocalUser(user)) activeUsersChart.write(user);
 
-		// 未読通知を作成
+	
 		if (data.visibility === 'specified') {
 			if (data.visibleUsers == null) throw new Error('invalid param');
 
 			for (const u of data.visibleUsers) {
-				// ローカルユーザーのみ
+				
 				if (!Users.isLocalUser(u)) continue;
 
 				insertNoteUnread(u.id, note, {
@@ -335,7 +332,7 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 			}
 		} else {
 			for (const u of mentionedUsers) {
-				// ローカルユーザーのみ
+				
 				if (!Users.isLocalUser(u)) continue;
 
 				insertNoteUnread(u.id, note, {
@@ -369,7 +366,7 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 			// Fetch watchers
 			nmRelatedPromises.push(notifyToWatchersOfReplyee(data.reply, user, nm));
 
-			// 通知
+			
 			if (data.reply.userHost === null) {
 				const threadMuted = await NoteThreadMutings.findOneBy({
 					userId: data.reply.userId,
@@ -425,24 +422,24 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 				const noteActivity = await renderNoteOrRenoteActivity(data, note);
 				const dm = new DeliverManager(user, noteActivity);
 
-				// メンションされたリモートユーザーに配送
+				
 				for (const u of mentionedUsers.filter(u => Users.isRemoteUser(u))) {
 					dm.addDirectRecipe(u as IRemoteUser);
 				}
 
-				// 投稿がリプライかつ投稿者がローカルユーザーかつリプライ先の投稿の投稿者がリモートユーザーなら配送
+				
 				if (data.reply && data.reply.userHost !== null) {
 					const u = await Users.findOneBy({ id: data.reply.userId });
 					if (u && Users.isRemoteUser(u)) dm.addDirectRecipe(u);
 				}
 
-				// 投稿がRenoteかつ投稿者がローカルユーザーかつRenote元の投稿の投稿者がリモートユーザーなら配送
+				
 				if (data.renote && data.renote.userHost !== null) {
 					const u = await Users.findOneBy({ id: data.renote.userId });
 					if (u && Users.isRemoteUser(u)) dm.addDirectRecipe(u);
 				}
 
-				// フォロワーに配送
+				
 				if (['public', 'home', 'followers'].includes(note.visibility)) {
 					dm.addFollowersRecipe();
 				}
@@ -467,8 +464,7 @@ export default async (user: { id: User['id']; username: User['username']; host: 
 			userId: user.id,
 			channelId: data.channel.id,
 		}).then(count => {
-			// この処理が行われるのはノート作成後なので、ノートが一つしかなかったら最初の投稿だと判断できる
-			// TODO: とはいえノートを削除して何回も投稿すればその分だけインクリメントされる雑さもあるのでどうにかしたい
+			
 			if (count === 1) {
 				Channels.increment({ id: data.channel!.id }, 'usersCount', 1);
 			}
@@ -529,7 +525,7 @@ async function insertNote(user: { id: User['id']; host: User['host']; }, data: O
 
 		attachedFileTypes: data.files ? data.files.map(file => file.type) : [],
 
-		// 以下非正規化データ
+		
 		replyUserId: data.reply ? data.reply.userId : null,
 		replyUserHost: data.reply ? data.reply.userHost : null,
 		renoteUserId: data.renote ? data.renote.userId : null,
@@ -556,7 +552,7 @@ async function insertNote(user: { id: User['id']; host: User['host']; }, data: O
 		}));
 	}
 
-	// 投稿を作成
+	
 	try {
 		if (insert.hasPoll) {
 			// Start transaction

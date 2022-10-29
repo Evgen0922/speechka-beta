@@ -1,3 +1,4 @@
+sendnote: "Выложить"
 reflectMayTakeTime: "Это может занять некоторое время."
 _actions:
     followBack: "подписаться в ответ"
@@ -935,7 +936,7 @@ _registry:
   domain: "Домен"
   createKey: "Новый ключ"
 _aboutSpeechka:
-  about: #"Speechka — программа с открытым исходным кодом, которую разрабатывает Evgen0922."
+  about: #"Speechka — программа с открытым исходным кодом, специально для пловцов!"
   contributors: "Основные авторы"
   allContributors: "Все соавторы"
   source: "Исходный код"

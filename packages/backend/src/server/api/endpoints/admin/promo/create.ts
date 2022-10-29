@@ -11,16 +11,16 @@ export const meta = {
 
 	errors: {
 		noSuchNote: {
-			message: 'No such note.',
+			message: 'Нет такой заметки.',
 			code: 'NO_SUCH_NOTE',
 			id: 'ee449fbe-af2a-453b-9cae-cf2fe7c895fc',
 		},
 
-		alreadyPromoted: {
-			message: 'The note has already promoted.',
-			code: 'ALREADY_PROMOTED',
-			id: 'ae427aa2-7a41-484f-a18c-2c1104051604',
-		},
+		// alreadyPromoted: {
+		// 	message: 'Заметка уже распространилась!',
+		// 	code: 'ALREADY_PROMOTED',
+		// 	id: 'ae427aa2-7a41-484f-a18c-2c1104051604',
+		// },
 	},
 } as const;
 

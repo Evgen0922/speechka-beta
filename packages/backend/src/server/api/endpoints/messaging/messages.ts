@@ -25,19 +25,19 @@ export const meta = {
 
 	errors: {
 		noSuchUser: {
-			message: 'No such user.',
+			message: 'Нет такого пользователя.',
 			code: 'NO_SUCH_USER',
 			id: '11795c64-40ea-4198-b06e-3c873ed9039d',
 		},
 
 		noSuchGroup: {
-			message: 'No such group.',
+			message: 'Нет такой группы.',
 			code: 'NO_SUCH_GROUP',
 			id: 'c4d9f88c-9270-4632-b032-6ed8cee36f7f',
 		},
 
 		groupAccessDenied: {
-			message: 'You can not read messages of groups that you have not joined.',
+			message: 'Вы не можете читать сообщения групп, к которым вы не присоединились.',
 			code: 'GROUP_ACCESS_DENIED',
 			id: 'a053a8dd-a491-4718-8f87-50775aad9284',
 		},

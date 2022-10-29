@@ -11,7 +11,7 @@ export const meta = {
 
 	errors: {
 		noSuchEmoji: {
-			message: 'No such emoji.',
+			message: 'Нет emoji.',
 			code: 'NO_SUCH_EMOJI',
 			id: '684dec9d-a8c2-4364-9aa8-456c49cb1dc8',
 		},

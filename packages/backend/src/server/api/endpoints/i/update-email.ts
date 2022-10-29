@@ -21,13 +21,13 @@ export const meta = {
 
 	errors: {
 		incorrectPassword: {
-			message: 'Incorrect password.',
+			message: 'Неправильный пароль.',
 			code: 'INCORRECT_PASSWORD',
 			id: 'e54c1d7e-e7d6-4103-86b6-0a95069b4ad3',
 		},
 
 		unavailable: {
-			message: 'Unavailable email address.',
+			message: 'Недопустимая почта.',
 			code: 'UNAVAILABLE',
 			id: 'a2defefb-f220-8849-0af6-17f816099323',
 		},
