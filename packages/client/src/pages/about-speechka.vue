@@ -32,13 +32,14 @@
 						</FormLink> -->
 					</div>
 				</FormSection>
-				<FormSection>
+				<!-- TODO: Удалена кнопка ссылки на авторов -->
+				<!-- <FormSection>
 					<template #label>{{ i18n.ts._aboutSpeechka.contributors }}</template>
 					<div class="_formLinks">
 						<FormLink to="https://github.com/Evgen0922" external>@Evgen0922</FormLink>
 					</div>
 					<template #caption><MkLink url="https://github.com/Evgen0922/speechka-dev">{{ i18n.ts._aboutSpeechka.allContributors }}</MkLink></template>
-				</FormSection>
+				</FormSection> -->
 				<!-- <FormSection>
 					<template #label><Mfm text="$[jelly ❤]"/> {{ i18n.ts._aboutSpeechka.patrons }}</template>
 					<div v-for="patron in patrons" :key="patron">{{ patron }}</div>
