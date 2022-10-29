@@ -83,7 +83,7 @@ export default (endpoint: IEndpoint, ctx: Koa.Context) => new Promise<void>((res
 			reply(403, new ApiError({
 				message: 'Ошибка аутентификации. Пожалуйста, убедитесь, что ваш токен правильный.',
 				code: 'AUTHENTICATION_FAILED',
-				b0a7f5f8-dc2f-4171-b91f-de88ad238403',
+				id: 'b0a7f5f8-dc2f-4171-b91f-de88ad238e14',
 			}));
 		} else {
 			reply(500, new ApiError());
