@@ -5,7 +5,8 @@ block vars
 	- const url = `${config.url}/@${(user.host ? `${user.username}@${user.host}` : user.username)}`;
 
 block title
-	= `${title} | ${instanceName}`
+	= `${title}`
+	//- = `${title} | ${instanceName}`
 
 block desc
 	meta(name='description' content= profile.description)

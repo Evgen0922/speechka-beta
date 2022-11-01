@@ -5,7 +5,8 @@ block vars
 	- const url = `${config.url}/channels/${channel.id}`;
 
 block title
-	= `${title} | ${instanceName}`
+	= `${title}`
+	//- = `${title} | ${instanceName}`
 
 block desc
 	meta(name='description' content= channel.description)

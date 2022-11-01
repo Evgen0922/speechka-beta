@@ -32,6 +32,7 @@
 						</FormLink> -->
 					</div>
 				</FormSection>
+				<template #label>{{ i18n.ts.warningbeta }}</template>
 				<!-- TODO: Удалена кнопка ссылки на авторов -->
 				<!-- <FormSection>
 					<template #label>{{ i18n.ts._aboutSpeechka.contributors }}</template>

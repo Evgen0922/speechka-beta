@@ -42,6 +42,7 @@
 		<template #label>{{ i18n.ts.appearance }}</template>
 		<!-- TODO: я не знаю, какая-то анимированная разметка MFM. Отключил. -->
 		<!-- <FormSwitch v-model="disableAnimatedMfm" class="_formBlock">{{ i18n.ts.disableAnimatedMfm }}</FormSwitch> -->
+
 		<FormSwitch v-model="reduceAnimation" class="_formBlock">{{ i18n.ts.reduceUiAnimation }}</FormSwitch>
 		<FormSwitch v-model="useBlurEffect" class="_formBlock">{{ i18n.ts.useBlurEffect }}</FormSwitch>
 		<FormSwitch v-model="useBlurEffectForModal" class="_formBlock">{{ i18n.ts.useBlurEffectForModal }}</FormSwitch>
@@ -49,12 +50,18 @@
 		<FormSwitch v-model="loadRawImages" class="_formBlock">{{ i18n.ts.loadRawImages }}</FormSwitch>
 		<FormSwitch v-model="disableShowingAnimatedImages" class="_formBlock">{{ i18n.ts.disableShowingAnimatedImages }}</FormSwitch>
 		<FormSwitch v-model="squareAvatars" class="_formBlock">{{ i18n.ts.squareAvatars }}</FormSwitch>
-		<FormSwitch v-model="useSystemFont" class="_formBlock">{{ i18n.ts.useSystemFont }}</FormSwitch>
-		<FormSwitch v-model="useOsNativeEmojis" class="_formBlock">
+		
+		<!-- TODO: Использование шрифта системы. Отключил. -->
+		<!-- <FormSwitch v-model="useSystemFont" class="_formBlock">{{ i18n.ts.useSystemFont }}</FormSwitch> -->
+
+		<!-- TODO: Использование emoji системы. Отключил. -->
+		<!-- <FormSwitch v-model="useOsNativeEmojis" class="_formBlock">
 			{{ i18n.ts.useOsNativeEmojis }}
 			<div><Mfm :key="useOsNativeEmojis" text="🍮🍦🍭🍩🍰🍫🍬🥞🍪"/></div>
-		</FormSwitch>
-		<FormSwitch v-model="disableDrawer" class="_formBlock">{{ i18n.ts.disableDrawer }}</FormSwitch>
+		</FormSwitch> -->
+
+		<!-- TODO: Использование выдвежных меню. Отключил. -->
+		<!-- <FormSwitch v-model="disableDrawer" class="_formBlock">{{ i18n.ts.disableDrawer }}</FormSwitch> -->
 
 		<FormRadios v-model="fontSize" class="_formBlock">
 			<template #label>{{ i18n.ts.fontSize }}</template>

@@ -62,10 +62,10 @@
 			<template #key>{{ i18n.ts.followingCount }} ({{ i18n.ts.local }})</template>
 			<template #value>{{ number(stats.localFollowingCount) }}</template>
 		</MkKeyValue>
-		<MkKeyValue oneline style="margin: 1em 0;">
+		<!-- <MkKeyValue oneline style="margin: 1em 0;">
 			<template #key>{{ i18n.ts.followingCount }} ({{ i18n.ts.remote }})</template>
 			<template #value>{{ number(stats.remoteFollowingCount) }}</template>
-		</MkKeyValue>
+		</MkKeyValue> -->
 		<MkKeyValue oneline style="margin: 1em 0;">
 			<template #key>{{ i18n.ts.followersCount }}</template>
 			<template #value>{{ number(stats.followersCount) }}</template>
@@ -74,10 +74,10 @@
 			<template #key>{{ i18n.ts.followersCount }} ({{ i18n.ts.local }})</template>
 			<template #value>{{ number(stats.localFollowersCount) }}</template>
 		</MkKeyValue>
-		<MkKeyValue oneline style="margin: 1em 0;">
+		<!-- <MkKeyValue oneline style="margin: 1em 0;">
 			<template #key>{{ i18n.ts.followersCount }} ({{ i18n.ts.remote }})</template>
 			<template #value>{{ number(stats.remoteFollowersCount) }}</template>
-		</MkKeyValue>
+		</MkKeyValue> -->
 		<MkKeyValue oneline style="margin: 1em 0;">
 			<template #key>{{ i18n.ts.pageLikesCount }}</template>
 			<template #value>{{ number(stats.pageLikesCount) }}</template>

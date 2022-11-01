@@ -134,12 +134,15 @@ const menuDef = $computed(() => [{
 		text: i18n.ts.general,
 		to: '/admin/settings',
 		active: currentPage?.route.name === 'settings',
-	}, {
-		icon: 'fas fa-envelope',
-		text: i18n.ts.emailServer,
-		to: '/admin/email-settings',
-		active: currentPage?.route.name === 'email-settings',
-	}, {
+	}, 
+	// TODO: Убрал настройку электронной почты, так как рассылки пока ине работают.
+	// {
+	// 	icon: 'fas fa-envelope',
+	// 	text: i18n.ts.emailServer,
+	// 	to: '/admin/email-settings',
+	// 	active: currentPage?.route.name === 'email-settings',
+	// }, 
+	{
 		icon: 'fas fa-cloud',
 		text: i18n.ts.objectStorage,
 		to: '/admin/object-storage',

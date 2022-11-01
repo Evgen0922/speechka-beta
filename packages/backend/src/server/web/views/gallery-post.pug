@@ -6,7 +6,8 @@ block vars
 	- const url = `${config.url}/gallery/${post.id}`;
 
 block title
-	= `${title} | ${instanceName}`
+	= `${title}`
+	//- = `${title} | ${instanceName}`
 
 block desc
 	meta(name='description' content= post.description)
