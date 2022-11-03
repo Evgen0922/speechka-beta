@@ -8,13 +8,13 @@
 				<span>{{ i18n.ts._visibility.publicDescription }}</span>
 			</div>
 		</button>
-		<button key="home" class="_button" :class="{ active: v === 'home' }" data-index="2" @click="choose('home')">
+		<!-- <button key="home" class="_button" :class="{ active: v === 'home' }" data-index="2" @click="choose('home')">
 			<div><i class="fas fa-home"></i></div>
 			<div>
 				<span>{{ i18n.ts._visibility.home }}</span>
 				<span>{{ i18n.ts._visibility.homeNotes }}</span>
 			</div>
-		</button>
+		</button> -->
 		<button key="followers" class="_button" :class="{ active: v === 'followers' }" data-index="3" @click="choose('followers')">
 			<div><i class="fas fa-unlock"></i></div>
 			<div>

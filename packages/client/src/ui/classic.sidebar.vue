@@ -23,10 +23,11 @@
 	<MkA v-if="$i.isAdmin || $i.isModerator" v-click-anime class="item" active-class="active" to="/admin" :behavior="settingsWindowed ? 'modalWindow' : null">
 		<i class="fas fa-door-open fa-fw"></i><span class="text">{{ $ts.controlPanel }}</span>
 	</MkA>
-	<button v-click-anime class="item _button" @click="more">
+	<!-- TODO: Удалена вкладка дополнительно! -->
+	<!-- <button v-click-anime class="item _button" @click="more">
 		<i class="fas fa-ellipsis-h fa-fw"></i><span class="text">{{ $ts.more }}</span>
 		<span v-if="otherNavItemIndicated" class="indicator"><i class="fas fa-circle"></i></span>
-	</button>
+	</button> -->
 	<MkA v-click-anime class="item" active-class="active" to="/settings" :behavior="settingsWindowed ? 'modalWindow' : null">
 		<i class="fas fa-cog fa-fw"></i><span class="text">{{ $ts.settings }}</span>
 	</MkA>
