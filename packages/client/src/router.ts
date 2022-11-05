@@ -385,7 +385,7 @@ export const routes = [{
 		component: page(() => import('./pages/_empty_.vue')),
 	}],
 
-path: '/moderator',
+	path: '/moderator',
 	component: iAmModerator ? page(() => import('./pages/moderator/index.vue')) : page(() => import('./pages/not-found.vue')),
 	children: [{
 		path: '/overview',
