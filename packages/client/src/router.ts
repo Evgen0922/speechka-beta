@@ -383,8 +383,10 @@ export const routes = [{
 	}, {
 		path: '/',
 		component: page(() => import('./pages/_empty_.vue')),
-	}],
+	}], 
+    }, 
 
+	{
 	path: '/moder',
 	component: iAmModerator ? page(() => import('./pages/moderator/index.vue')) : page(() => import('./pages/moderator/not-found.vue')),
 	children: [
@@ -472,9 +474,10 @@ export const routes = [{
 	}, {
 		path: '/',
 		component: page(() => import('./pages/_empty_.vue')),
-	}],
+	}], 
+},
 
-}, {
+{
 	path: '/my/favorites',
 	component: page(() => import('./pages/favorites.vue')),
 	loginRequired: true,
