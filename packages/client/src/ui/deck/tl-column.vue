@@ -1,10 +1,10 @@
 <template>
 <XColumn :menu="menu" :column="column" :is-stacked="isStacked" :indicated="indicated" @change-active-state="onChangeActiveState" @parent-focus="$event => emit('parent-focus', $event)">
 	<template #header>
-		<i v-if="column.tl === 'home'" class="fas fa-home"></i>
+		<i v-if="column.tl === 'global'" class="fas fa-home"></i>
+		<i v-else-if="column.tl === 'home'" class="fas fa-home"></i>
 		<i v-else-if="column.tl === 'local'" class="fas fa-comments"></i>
 		<i v-else-if="column.tl === 'social'" class="fas fa-share-alt"></i>
-		<i v-else-if="column.tl === 'global'" class="fas fa-globe"></i>
 		<span style="margin-left: 8px;">{{ column.name }}</span>
 	</template>
 

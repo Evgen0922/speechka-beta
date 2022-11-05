@@ -20,7 +20,10 @@
 		</component>
 	</template>
 	<div class="divider"></div>
-	<MkA v-if="$i.isAdmin || $i.isModerator" v-click-anime class="item" active-class="active" to="/admin" :behavior="settingsWindowed ? 'modalWindow' : null">
+	<MkA v-if="$i.isModerator" v-click-anime class="item" active-class="active" to="/moderator" :behavior="settingsWindowed ? 'modalWindow' : null">
+		<i class="fas fa-door-open fa-fw"></i><span class="text">{{ $ts.controlPanel }}</span>
+	</MkA>
+	<MkA v-if="$i.isAdmin" v-click-anime class="item" active-class="active" to="/admin" :behavior="settingsWindowed ? 'modalWindow' : null">
 		<i class="fas fa-door-open fa-fw"></i><span class="text">{{ $ts.controlPanel }}</span>
 	</MkA>
 	<!-- TODO: Удалена вкладка дополнительно! -->

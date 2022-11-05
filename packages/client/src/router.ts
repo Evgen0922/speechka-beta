@@ -384,6 +384,95 @@ export const routes = [{
 		path: '/',
 		component: page(() => import('./pages/_empty_.vue')),
 	}],
+
+path: '/moderator',
+	component: iAmModerator ? page(() => import('./pages/moderator/index.vue')) : page(() => import('./pages/not-found.vue')),
+	children: [{
+		path: '/overview',
+		name: 'overview',
+		component: page(() => import('./pages/moderator/overview.vue')),
+	}, {
+		path: '/users',
+		name: 'users',
+		component: page(() => import('./pages/moderator/users.vue')),
+	}, {
+		path: '/emojis',
+		name: 'emojis',
+		component: page(() => import('./pages/moderator/emojis.vue')),
+	}, 
+	// {
+	// 	path: '/queue',
+	// 	name: 'queue',
+	// 	component: page(() => import('./pages/moderator/queue.vue')),
+	// }, 
+	{
+		path: '/files',
+		name: 'files',
+		component: page(() => import('./pages/moderator/files.vue')),
+	}, {
+		path: '/announcements',
+		name: 'announcements',
+		component: page(() => import('./pages/moderator/announcements.vue')),
+	}, 
+	// {
+	// 	path: '/ads',
+	// 	name: 'ads',
+	// 	component: page(() => import('./pages/moderator/ads.vue')),
+	// }, 
+	{
+		path: '/database',
+		name: 'database',
+		component: page(() => import('./pages/moderator/database.vue')),
+	}, {
+		path: '/abuses',
+		name: 'abuses',
+		component: page(() => import('./pages/moderator/abuses.vue')),
+	}, {
+		path: '/settings',
+		name: 'settings',
+		component: page(() => import('./pages/moderator/settings.vue')),
+	}, {
+		path: '/email-settings',
+		name: 'email-settings',
+		component: page(() => import('./pages/moderator/email-settings.vue')),
+	}, {
+		path: '/object-storage',
+		name: 'object-storage',
+		component: page(() => import('./pages/moderator/object-storage.vue')),
+	}, {
+		path: '/security',
+		name: 'security',
+		component: page(() => import('./pages/moderator/security.vue')),
+	}, 
+	// {
+	// 	path: '/relays',
+	// 	name: 'relays',
+	// 	component: page(() => import('./pages/moderator/relays.vue')),
+	// }, 
+	// {
+	// 	path: '/integrations',
+	// 	name: 'integrations',
+	// 	component: page(() => import('./pages/moderator/integrations.vue')),
+	// }, 
+	{
+		path: '/instance-block',
+		name: 'instance-block',
+		component: page(() => import('./pages/moderator/instance-block.vue')),
+	}, 
+	// {
+	// 	path: '/proxy-account',
+	// 	name: 'proxy-account',
+	// 	component: page(() => import('./pages/moderator/proxy-account.vue')),
+	// }, 
+	{
+		path: '/other-settings',
+		name: 'other-settings',
+		component: page(() => import('./pages/moderator/other-settings.vue')),
+	}, {
+		path: '/',
+		component: page(() => import('./pages/_empty_.vue')),
+	}],
+
 }, {
 	path: '/my/favorites',
 	component: page(() => import('./pages/favorites.vue')),

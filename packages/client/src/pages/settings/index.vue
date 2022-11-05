@@ -82,12 +82,15 @@ const menuDef = computed(() => [{
 		text: i18n.ts.notifications,
 		to: '/settings/notifications',
 		active: currentPage?.route.name === 'notifications',
-	}, {
-		icon: 'fas fa-envelope',
-		text: i18n.ts.email,
-		to: '/settings/email',
-		active: currentPage?.route.name === 'email',
-	}, {
+	}, 
+	// TODO: Убрал настройку электронной почты, так как рассылки пока ине работают.
+	// {
+	// 	icon: 'fas fa-envelope',
+	// 	text: i18n.ts.email,
+	// 	to: '/settings/email',
+	// 	active: currentPage?.route.name === 'email',
+	// }, 
+	{
 		icon: 'fas fa-lock',
 		text: i18n.ts.security,
 		to: '/settings/security',
@@ -105,12 +108,15 @@ const menuDef = computed(() => [{
 		text: i18n.ts.theme,
 		to: '/settings/theme',
 		active: currentPage?.route.name === 'theme',
-	}, {
-		icon: 'fas fa-bars',
-		text: i18n.ts.navbar,
-		to: '/settings/navbar',
-		active: currentPage?.route.name === 'navbar',
-	}, {
+	}, 
+	// TODO: Убрано изменение навигационной панели (слева)
+	// {
+	// 	icon: 'fas fa-bars',
+	// 	text: i18n.ts.navbar,
+	// 	to: '/settings/navbar',
+	// 	active: currentPage?.route.name === 'navbar',
+	// }, 
+	{
 		icon: 'fas fa-music',
 		text: i18n.ts.sounds,
 		to: '/settings/sounds',
