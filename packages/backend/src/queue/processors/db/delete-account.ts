@@ -71,24 +71,24 @@ export async function deleteAccount(job: Bull.Job<DbUserDeleteJobData>): Promise
 			}
 		}
 
-		logger.succ(`All of files deleted`);
+		logger.succ(`Все файлы удалены`);
 	}
 
 	{ // Send email notification
 		const profile = await UserProfiles.findOneByOrFail({ userId: user.id });
 		if (profile.email && profile.emailVerified) {
-			sendEmail(profile.email, 'Account deleted',
-				`Your account has been deleted.`,
-				`Your account has been deleted.`);
+			sendEmail(profile.email, 'Аккаунт удалён',
+				`Ваш аккаунт был удалён.`,
+				`Ваш аккаунт был удалён.`);
 		}
 	}
 
-	// soft指定されている場合は物理削除しない
+
 	if (job.data.soft) {
 		// nop
 	} else {
 		await Users.delete(job.data.user.id);
 	}
 
-	return 'Account deleted';
+	return 'Аккаунт удалён';
 }
