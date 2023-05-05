@@ -33,7 +33,7 @@ export default async (ctx: Koa.Context) => {
 		ctx.status = 429;
 		ctx.body = {
 			error: {
-				message: 'Too many failed attempts to sign in. Try again later.',
+				message: 'Слишком много попыток входа. Попробуйте позже.',
 				code: 'TOO_MANY_AUTHENTICATION_FAILURES',
 				id: '22d05606-fbcf-421a-a2db-b32610dcfd1b',
 			},
