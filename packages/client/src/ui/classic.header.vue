@@ -13,13 +13,17 @@
 				</component>
 			</template>
 			<div class="divider"></div>
-			<MkA v-if="$i.isAdmin || $i.isModerator" v-click-anime v-tooltip="$ts.controlPanel" class="item" active-class="active" to="/admin" :behavior="settingsWindowed ? 'modalWindow' : null">
+			<MkA v-if="$i.isModerator" v-click-anime v-tooltip="$ts.controlPanel" class="item" active-class="active" to="/moderator" :behavior="settingsWindowed ? 'modalWindow' : null">
 				<i class="fas fa-door-open fa-fw"></i>
 			</MkA>
-			<button v-click-anime class="item _button" @click="more">
+			<MkA v-if="$i.isAdmin" v-click-anime v-tooltip="$ts.controlPanel" class="item" active-class="active" to="/admin" :behavior="settingsWindowed ? 'modalWindow' : null">
+				<i class="fas fa-door-open fa-fw"></i>
+			</MkA>
+			<!-- TODO: Удалена вкладка дополнительно! -->
+			<!-- <button v-click-anime class="item _button" @click="more">
 				<i class="fas fa-ellipsis-h fa-fw"></i>
 				<span v-if="otherNavItemIndicated" class="indicator"><i class="fas fa-circle"></i></span>
-			</button>
+			</button> -->
 		</div>
 		<div class="right">
 			<MkA v-click-anime v-tooltip="$ts.settings" class="item" active-class="active" to="/settings" :behavior="settingsWindowed ? 'modalWindow' : null">

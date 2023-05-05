@@ -11,8 +11,10 @@ html
 		meta(charset='utf-8')
 		meta(name='application-name' content='Speechka')
 		meta(name='referrer' content='origin')
-		meta(name='theme-color' content= themeColor || '#86b300')
-		meta(name='theme-color-orig' content= themeColor || '#86b300')
+		meta(name='theme-color' content= themeColor || '#606df7')
+		meta(name='theme-color-orig' content= themeColor || '#606df7')
+		//- meta(name='theme-color' content= themeColor || '#86b300')
+		//- meta(name='theme-color-orig' content= themeColor || '#86b300')
 		meta(property='twitter:card' content='summary')
 		meta(property='og:site_name' content= instanceName || 'Speechka')
 		meta(name='viewport' content='width=device-width, initial-scale=1')
@@ -36,13 +38,13 @@ html
 				= title || 'Speechka'
 
 		block desc
-			meta(name='description' content= desc || '✨🌎✨ A interplanetary communication platform ✨🚀✨')
+			meta(name='description' content= desc || '✨🌎✨ Платформа для общенияпловцов')
 
 		block meta
 
 		block og
 			meta(property='og:title'       content= title || 'Speechka') 
-			meta(property='og:description' content= desc || '✨🌎✨ A interplanetary communication platform ✨🚀✨') 
+			meta(property='og:description' content= desc || '✨🌎✨ Платформа для общения пловцов') 
 			meta(property='og:image'       content= img)
 
 		style

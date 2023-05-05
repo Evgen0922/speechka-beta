@@ -29,13 +29,17 @@
 				</component>
 			</template>
 			<div class="divider"></div>
-			<MkA v-if="$i.isAdmin || $i.isModerator" v-click-anime v-tooltip.noDelay.right="i18n.ts.controlPanel" class="item" active-class="active" to="/admin">
+			<MkA v-if="$i.isModerator" v-click-anime v-tooltip.noDelay.right="i18n.ts.controlPanel" class="item" active-class="active" to="/moderator">
 				<i class="icon fas fa-door-open fa-fw"></i><span class="text">{{ i18n.ts.controlPanel }}</span>
 			</MkA>
-			<button v-click-anime class="item _button" @click="more">
+			<MkA v-if="$i.isAdmin" v-click-anime v-tooltip.noDelay.right="i18n.ts.controlPanel" class="item" active-class="active" to="/admin">
+				<i class="icon fas fa-door-open fa-fw"></i><span class="text">{{ i18n.ts.controlPanel }}</span>
+			</MkA>
+			<!-- TODO: Удалена вкладка дополнительно! -->
+			<!-- <button v-click-anime class="item _button" @click="more">
 				<i class="icon fa fa-ellipsis-h fa-fw"></i><span class="text">{{ i18n.ts.more }}</span>
 				<span v-if="otherMenuItemIndicated" class="indicator"><i class="icon fas fa-circle"></i></span>
-			</button>
+			</button> -->
 			<MkA v-click-anime v-tooltip.noDelay.right="i18n.ts.settings" class="item" active-class="active" to="/settings">
 				<i class="icon fas fa-cog fa-fw"></i><span class="text">{{ i18n.ts.settings }}</span>
 			</MkA>

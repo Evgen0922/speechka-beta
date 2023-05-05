@@ -8,7 +8,8 @@
 	kind: 'light',
 
 	props: {
-		accent: '#86b300',
+		accent: '#606df7',
+		// accent: '#86b300',
 		accentDarken: ':darken<10<@accent',
 		accentLighten: ':lighten<10<@accent',
 		accentedBg: ':alpha<0.15<@accent',
@@ -70,7 +71,8 @@
 		wallpaperOverlay: 'rgba(255, 255, 255, 0.5)',
 		badge: '#31b1ce',
 		messageBg: '@bg',
-		success: '#86b300',
+		success: '#606df7',
+		// success: '#86b300',
 		error: '#ec4137',
 		warn: '#ecb637',
 		codeString: '#b98710',

@@ -19,7 +19,7 @@ export const meta = {
 
 	errors: {
 		noSuchUser: {
-			message: 'No such user.',
+			message: 'Нет такого пользователя.',
 			code: 'NO_SUCH_USER',
 			id: '8621d8bf-c358-4303-a066-5ea78610eb3f',
 		},
@@ -31,7 +31,7 @@ export const meta = {
 		},
 
 		notBlocking: {
-			message: 'You are not blocking that user.',
+			message: 'Вы не блокируете этого пользователя.',
 			code: 'NOT_BLOCKING',
 			id: '291b2efa-60c6-45c0-9f6a-045c8f9b02cd',
 		},

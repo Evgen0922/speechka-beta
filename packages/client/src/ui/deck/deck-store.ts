@@ -23,6 +23,7 @@ export type Column = {
 	listId?: string;
 	includingTypes?: typeof notificationTypes[number][];
 	tl?: 'home' | 'local' | 'social' | 'global';
+	// tl?: 'home' | 'local' | 'social' | 'global';
 };
 
 function copy<T>(x: T): T {

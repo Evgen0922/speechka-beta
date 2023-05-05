@@ -11,7 +11,7 @@ export const meta = {
 
 	errors: {
 		invalidUrl: {
-			message: 'Invalid URL',
+			message: 'Неверный URL',
 			code: 'INVALID_URL',
 			id: 'fb8c92d3-d4e5-44e7-b3d4-800d5cef8b2c',
 		},

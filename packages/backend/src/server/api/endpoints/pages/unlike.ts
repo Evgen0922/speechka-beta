@@ -11,13 +11,13 @@ export const meta = {
 
 	errors: {
 		noSuchPage: {
-			message: 'No such page.',
+			message: 'Нет такой страницы.',
 			code: 'NO_SUCH_PAGE',
 			id: 'a0d41e20-1993-40bd-890e-f6e560ae648e',
 		},
 
 		notLiked: {
-			message: 'You have not liked that page.',
+			message: 'Вам не понравилась эта страница.',
 			code: 'NOT_LIKED',
 			id: 'f5e586b0-ce93-4050-b0e3-7f31af5259ee',
 		},

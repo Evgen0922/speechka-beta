@@ -41,7 +41,7 @@
 							<template #n><b>{{ onlineUsersCount }}</b></template>
 						</I18n>
 					</div>
-					<button class="_button _acrylic menu" @click="showMenu"><i class="fas fa-ellipsis-h"></i></button>
+					<!-- <button class="_button _acrylic menu" @click="showMenu"><i class="fas fa-ellipsis-h"></i></button> -->
 				</div>
 			</div>
 			<nav class="nav">
@@ -138,7 +138,7 @@ export default defineComponent({
 				text: this.$ts.help,
 				icon: 'fas fa-question-circle',
 				action: () => {
-					window.open(`https://github.com/Evgen0922/speechka_develop`, '_blank');
+					window.open(`https://github.com/Evgen0922/speechka-dev`, '_blank');
 				}
 			}], ev.currentTarget ?? ev.target);
 		},

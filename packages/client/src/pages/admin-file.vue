@@ -12,7 +12,7 @@
 					<template #value><span class="_monospace">{{ file.type }}</span></template>
 				</MkKeyValue>
 				<MkKeyValue oneline style="margin: 1em 0;">
-					<template #key>Size</template>
+					<template #key>Размер</template>
 					<template #value><span class="_monospace">{{ bytes(file.size) }}</span></template>
 				</MkKeyValue>
 				<MkKeyValue :copy="file.id" oneline style="margin: 1em 0;">
@@ -20,7 +20,7 @@
 					<template #value><span class="_monospace">{{ file.id }}</span></template>
 				</MkKeyValue>
 				<MkKeyValue :copy="file.md5" oneline style="margin: 1em 0;">
-					<template #key>MD5</template>
+					<template #key>Хеш MD5</template>
 					<template #value><span class="_monospace">{{ file.md5 }}</span></template>
 				</MkKeyValue>
 				<MkKeyValue oneline style="margin: 1em 0;">
@@ -31,9 +31,9 @@
 			<MkA v-if="file.user" class="user" :to="`/user-info/${file.user.id}`">
 				<MkUserCardMini :user="file.user"/>
 			</MkA>
-			<div class="_formBlock">
+			<!-- <div class="_formBlock">
 				<MkSwitch v-model="isSensitive" @update:modelValue="toggleIsSensitive">NSFW</MkSwitch>
-			</div>
+			</div> -->
 
 			<div class="_formBlock">
 				<MkButton danger @click="del"><i class="fas fa-trash-alt"></i> {{ i18n.ts.delete }}</MkButton>

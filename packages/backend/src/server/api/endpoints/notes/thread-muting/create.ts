@@ -14,7 +14,7 @@ export const meta = {
 
 	errors: {
 		noSuchNote: {
-			message: 'No such note.',
+			message: 'Нет такой заметки.',
 			code: 'NO_SUCH_NOTE',
 			id: '5ff67ada-ed3b-2e71-8e87-a1a421e177d2',
 		},

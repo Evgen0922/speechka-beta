@@ -15,13 +15,13 @@ export const meta = {
 
 	errors: {
 		noSuchFile: {
-			message: 'No such file.',
+			message: 'Нет такого файла.',
 			code: 'NO_SUCH_FILE',
 			id: '908939ec-e52b-4458-b395-1025195cea58',
 		},
 
 		accessDenied: {
-			message: 'Access denied.',
+			message: 'Ошибка доступа!',
 			code: 'ACCESS_DENIED',
 			id: '5eb8d909-2540-4970-90b8-dd6f86088121',
 		},

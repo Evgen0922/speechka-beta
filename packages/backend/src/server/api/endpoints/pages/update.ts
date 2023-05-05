@@ -18,24 +18,24 @@ export const meta = {
 
 	errors: {
 		noSuchPage: {
-			message: 'No such page.',
+			message: 'Нет такой страницы.',
 			code: 'NO_SUCH_PAGE',
 			id: '21149b9e-3616-4778-9592-c4ce89f5a864',
 		},
 
 		accessDenied: {
-			message: 'Access denied.',
+			message: 'Ошибка доступа.',
 			code: 'ACCESS_DENIED',
 			id: '3c15cd52-3b4b-4274-967d-6456fc4f792b',
 		},
 
 		noSuchFile: {
-			message: 'No such file.',
+			message: 'Нет такого файла',
 			code: 'NO_SUCH_FILE',
 			id: 'cfc23c7c-3887-490e-af30-0ed576703c82',
 		},
 		nameAlreadyExists: {
-			message: 'Specified name already exists.',
+			message: 'Указанное имя уже существует.',
 			code: 'NAME_ALREADY_EXISTS',
 			id: '2298a392-d4a1-44c5-9ebb-ac1aeaa5a9ab',
 		},

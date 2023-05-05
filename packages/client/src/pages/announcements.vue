@@ -4,7 +4,7 @@
 	<MkSpacer :content-max="800">
 		<MkPagination v-slot="{items}" :pagination="pagination" class="ruryvtyk _content">
 			<section v-for="(announcement, i) in items" :key="announcement.id" class="_card announcement">
-				<div class="_title"><span v-if="$i && !announcement.isRead">🆕 </span>{{ announcement.title }}</div>
+				<div class="_title"><span v-if="$i && !announcement.isRead">❗🆕 </span>{{ announcement.title }}</div>
 				<div class="_content">
 					<Mfm :text="announcement.text"/>
 					<img v-if="announcement.imageUrl" :src="announcement.imageUrl"/>

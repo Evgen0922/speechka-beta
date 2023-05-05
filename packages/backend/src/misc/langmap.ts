@@ -6,9 +6,9 @@ export const langmap = {
 	// 'en-US': {
 	// 	nativeName: 'English (US)',
 	// },
-	'ru': {
-		nativeName: 'Русский',
-	},
+	// 'ru': {
+	// 	nativeName: 'Русский',
+	// },
 	'ru-RU': {
 		nativeName: 'Русский',
 	},

@@ -15,25 +15,25 @@ export const meta = {
 
 	errors: {
 		noSuchList: {
-			message: 'No such list.',
+			message: 'Нет такого листа.',
 			code: 'NO_SUCH_LIST',
 			id: '2214501d-ac96-4049-b717-91e42272a711',
 		},
 
 		noSuchUser: {
-			message: 'No such user.',
+			message: 'Нет такого пользователя.',
 			code: 'NO_SUCH_USER',
 			id: 'a89abd3d-f0bc-4cce-beb1-2f446f4f1e6a',
 		},
 
 		alreadyAdded: {
-			message: 'That user has already been added to that list.',
+			message: 'Этот пользователь уже был добавлен в этот лист.',
 			code: 'ALREADY_ADDED',
 			id: '1de7c884-1595-49e9-857e-61f12f4d4fc5',
 		},
 
 		youHaveBeenBlocked: {
-			message: 'You cannot push this user because you have been blocked by this user.',
+			message: 'Вы не можете нажать на этого пользователя, потому что вы были заблокированы этим пользователем.',
 			code: 'YOU_HAVE_BEEN_BLOCKED',
 			id: '990232c5-3f9d-4d83-9f3f-ef27b6332a4b',
 		},

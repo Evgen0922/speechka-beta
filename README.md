@@ -1,1 +1,1 @@
-speechka_dev - Speechka
+speechka-dev - Speechka

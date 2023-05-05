@@ -193,7 +193,8 @@ const submitText = $computed((): string => {
 		? i18n.ts.quote
 		: props.reply
 			? i18n.ts.reply
-			: i18n.ts.note;
+			: i18n.ts.sendnote;
+			// : i18n.ts.note;
 });
 
 const textLength = $computed((): number => {

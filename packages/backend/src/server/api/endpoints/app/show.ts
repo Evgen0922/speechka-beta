@@ -7,7 +7,7 @@ export const meta = {
 
 	errors: {
 		noSuchApp: {
-			message: 'No such app.',
+			message: 'Нет такого приложения.',
 			code: 'NO_SUCH_APP',
 			id: 'dce83913-2dc6-4093-8a7b-71dbb11718a3',
 		},

@@ -377,7 +377,7 @@ const headerTabs = $computed(() => [{
 }, 
 {
 	key: 'raw',
-	title: 'Raw',
+	title: 'Дополнительно',
 	icon: 'fas fa-code',
 }
 ].filter(x => x != null));

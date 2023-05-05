@@ -9,7 +9,7 @@ export const meta = {
 
 	errors: {
 		noSuchSession: {
-			message: 'No such session.',
+			message: 'Нет такой сессии.',
 			code: 'NO_SUCH_SESSION',
 			id: 'bd72c97d-eba7-4adb-a467-f171b8847250',
 		},

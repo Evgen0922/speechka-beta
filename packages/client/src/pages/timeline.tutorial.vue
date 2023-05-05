@@ -43,7 +43,7 @@
 		<div>{{ i18n.ts._tutorial.step7_1 }}</div>
 		<I18n :src="i18n.ts._tutorial.step7_2" tag="div">
 			<template #help>
-				<a href="https://github.com/Evgen0922/speechka_develop_ynh" target="_blank" class="_link">{{ i18n.ts.help }}</a>
+				<a href="https://github.com/Evgen0922/speechka-dev_ynh" target="_blank" class="_link">{{ i18n.ts.help }}</a>
 			</template>
 		</I18n>
 		<div>{{ i18n.ts._tutorial.step7_3 }}</div>
@@ -64,6 +64,19 @@
 	</div>
 </div>
 </template> -->
+
+<template>
+<div class="_card tbkwesmv">
+	<div class="_title"><i class="fas fa-info-circle"></i> {{ i18n.ts._tutorial.title }}</div>
+	<div v-if="tutorial === 0" class="_content">
+		<div>{{ i18n.ts._tutorial.step1_1 }}</div>
+		<div>{{ i18n.ts._tutorial.step1_2 }}</div>
+		<div>{{ i18n.ts._tutorial.step1_3 }}</div>
+		<div>{{ i18n.ts._tutorial.step1_4 }}</div>
+	 </div>
+		<MkButton v-if="tutorial === 0" class="ok" primary @click="tutorial = -1"><i class="fas fa-check"></i> {{ i18n.ts.gotIt }}</MkButton>
+</div>
+</template>
 
 <script lang="ts" setup>
 import { computed } from 'vue';

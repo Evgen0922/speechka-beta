@@ -32,7 +32,7 @@ export default function <T extends IEndpointMeta, Ps extends Schema>(meta: T, pa
 			};
 
 			if (file == null) return Promise.reject(new ApiError({
-				message: 'File required.',
+				message: 'Требуемый файл.',
 				code: 'FILE_REQUIRED',
 				id: '4267801e-70d1-416a-b011-4ee502885d8b',
 			}));
@@ -44,9 +44,9 @@ export default function <T extends IEndpointMeta, Ps extends Schema>(meta: T, pa
 
 			const errors = validate.errors!;
 			const err = new ApiError({
-				message: 'Invalid param.',
+				message: 'Недопустимый параметр.',
 				code: 'INVALID_PARAM',
-				id: '3d81ceae-475f-4600-b2a8-2bc116157532',
+				id: '3d81ceae-475f-4600-b2a8-2bc116157400',
 			}, {
 				param: errors[0].schemaPath,
 				reason: errors[0].message,

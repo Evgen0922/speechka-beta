@@ -54,11 +54,11 @@ export default async (user: { id: User['id']; host: User['host']; }, note: Note,
 			});
 
 			if (exists.reaction !== reaction) {
-				// 別のリアクションがすでにされていたら置き換える
+				
 				await deleteReaction(user, note);
 				await NoteReactions.insert(record);
 			} else {
-				// 同じリアクションがすでにされていたらエラー
+				
 				throw new IdentifiableError('51c42bb4-931a-456b-bff7-e5a8a70dd298');
 			}
 		} else {
@@ -78,7 +78,7 @@ export default async (user: { id: User['id']; host: User['host']; }, note: Note,
 
 	perUserReactionsChart.update(user, note);
 
-	// カスタム絵文字リアクションだったら絵文字情報も送る
+	
 	const decodedReaction = decodeReaction(reaction);
 
 	const emoji = await Emojis.findOne({
@@ -93,12 +93,12 @@ export default async (user: { id: User['id']; host: User['host']; }, note: Note,
 		reaction: decodedReaction.reaction,
 		emoji: emoji != null ? {
 			name: emoji.host ? `${emoji.name}@${emoji.host}` : `${emoji.name}@.`,
-			url: emoji.publicUrl || emoji.originalUrl, // || emoji.originalUrl してるのは後方互換性のため
+			url: emoji.publicUrl || emoji.originalUrl, 
 		} : null,
 		userId: user.id,
 	});
 
-	// リアクションされたユーザーがローカルユーザーなら通知を作成
+
 	if (note.userHost === null) {
 		createNotification(note.userId, 'reaction', {
 			notifierId: user.id,
@@ -121,7 +121,7 @@ export default async (user: { id: User['id']; host: User['host']; }, note: Note,
 		}
 	});
 
-	//#region 配信
+	//#region 
 	if (Users.isLocalUser(user) && !note.localOnly) {
 		const content = renderActivity(await renderLike(record, note));
 		const dm = new DeliverManager(user, content);

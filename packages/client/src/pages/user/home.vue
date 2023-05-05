@@ -56,7 +56,12 @@
 						<dl class="field">
 							<dt class="name"><i class="fas fa-calendar-alt fa-fw"></i> {{ i18n.ts.registeredDate }}</dt>
 							<dd class="value">{{ new Date(user.createdAt).toLocaleString() }} (<MkTime :time="user.createdAt"/>)</dd>
-						</dl>
+						</dl>	
+						<!-- TODO: Добалено отображение последней активности -->
+						<dl class="field">
+							<dt class="name"><i class="fas fa-calendar-alt fa-fw"></i> {{ i18n.ts.lastActiveDate }}</dt>
+							<dd class="value">{{ new Date(user.lastActiveDate).toLocaleString() }} (<MkTime :time="user.lastActiveDate"/>)</dd>
+						</dl>	
 					</div>
 					<div v-if="user.fields.length > 0" class="fields">
 						<dl v-for="(field, i) in user.fields" :key="i" class="field">
